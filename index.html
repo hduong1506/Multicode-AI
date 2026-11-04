@@ -1,0 +1,1103 @@
+<!doctype html>
+<html lang="vi" data-theme="light"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f4f2eb"><title>MultiCode — Học bằng cách làm</title>
+<style>
+:root{color-scheme:light;--bg:#f4f2eb;--card:#fffefa;--soft:#eeece4;--ink:#222a27;--muted:#747c75;--line:#deded5;--green:#265f50;--gs:#e6eee8;--rust:#bd6045;--editor:#202624;font:14px/1.55 system-ui,-apple-system,'Segoe UI',sans-serif}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink)}button,input,textarea,select{font:inherit}button{cursor:pointer;color:inherit}[data-theme=dark]{color-scheme:dark;--bg:#1b201d;--card:#232925;--soft:#2b322d;--ink:#e7e9e2;--muted:#a3aaa1;--line:#343d37;--green:#82ae8c;--gs:#29392e;--rust:#d58c70}.top{height:64px;position:sticky;top:0;z-index:3;display:flex;align-items:center;justify-content:space-between;padding:0 23px;border-bottom:1px solid var(--line);background:var(--bg)}.brand{display:flex;align-items:center;gap:9px;border:0;background:none;font-weight:800}.mark{display:grid;place-items:center;width:34px;height:34px;border-radius:7px;background:var(--green);color:white;font-size:20px}.brand small{display:block;color:var(--muted);font-size:8px;letter-spacing:1px}.right{display:flex;gap:8px;align-items:center}.right button,.ghost{padding:8px 10px;border:1px solid var(--line);border-radius:5px;background:var(--card);font-size:10px}.layout{display:grid;grid-template-columns:205px 1fr;min-height:calc(100vh - 64px)}aside{position:sticky;top:64px;height:calc(100vh - 64px);padding:20px 13px;border-right:1px solid var(--line)}.eyebrow{color:var(--green);font-size:9px;font-weight:800;letter-spacing:1.1px}.nav{display:grid;gap:4px;margin-top:10px}.nav button{padding:9px;border:0;border-radius:4px;background:none;text-align:left;color:var(--muted);font-size:11px}.nav button.active,.nav button:hover{background:var(--gs);color:var(--green);font-weight:750}.note{position:absolute;bottom:15px;left:15px;right:15px;padding:10px;border:1px solid var(--line);border-radius:5px;color:var(--muted);font-size:9px}.main{max-width:1280px;width:100%;margin:auto;padding:32px clamp(18px,4vw,55px)}.page{display:none}.page.active{display:block;animation:fade .2s ease}@keyframes fade{from{opacity:.5;transform:translateY(4px)}to{opacity:1;transform:none}}.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center;padding:22px 0 38px}.hero h1{margin:8px 0;font-size:clamp(42px,6vw,66px);line-height:1.03;letter-spacing:-3px}.hero h1 em{font-family:Georgia,serif;font-weight:400;color:var(--green)}.hero p{max-width:460px;color:var(--muted);font-size:12px;line-height:1.8}.btn{padding:9px 12px;border:1px solid var(--line);border-radius:5px;background:var(--card);font-size:10px;font-weight:750}.primary{background:var(--green);border-color:var(--green);color:#fff}.sample,.ide{overflow:hidden;border:1px solid #39413c;border-radius:7px;background:var(--editor);color:#e3eae3}.sample header,.sample footer,.idebar{padding:9px 12px;background:#29312d;color:#aab4ac;font-size:9px}.sample pre{margin:0;padding:16px;color:#dfe8df;font:11px/1.85 ui-monospace,monospace}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.tile,.panel{padding:15px;border:1px solid var(--line);border-radius:6px;background:var(--card)}.tile{min-height:140px;text-align:left}.tile small{color:var(--muted);font-size:8px;letter-spacing:1px}.tile h3{margin:17px 0 4px;font-size:14px}.tile p,.muted{color:var(--muted);font-size:10px;line-height:1.7}.head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:15px;padding:4px 0 16px;border-bottom:1px solid var(--line)}.head h1{margin:4px 0;font-size:28px}.head p{margin:0;color:var(--muted);font-size:10px}.course{display:grid;grid-template-columns:.38fr .62fr;gap:10px}.modules{display:grid;gap:5px}.module{padding:9px;border:1px solid var(--line);border-radius:4px;background:var(--card);text-align:left;font-size:10px}.module.active{background:var(--gs);border-color:#9ab3a0}.lesson h2{font-size:20px}.lesson p{color:var(--muted);font-size:11px}.lesson pre{padding:12px;background:var(--editor);color:#e3eae3;white-space:pre-wrap;font:10px/1.7 ui-monospace,monospace}.quiz{display:grid;gap:6px;padding:10px;border:1px solid var(--line);font-size:10px}.quiz label{color:var(--muted)}.idebar{display:flex;justify-content:space-between;flex-wrap:wrap;gap:7px}.idebar button,.idebar select,.idebar input{padding:6px;border:1px solid #46504a;border-radius:4px;background:#202624;color:#e4eae4;font-size:9px}.edit{display:grid;grid-template-columns:34px 1fr;min-height:250px;max-height:52vh;overflow:auto;padding:10px 0}.gutter{margin:0;padding-right:9px;text-align:right;color:#77837a;font:10px/1.7 ui-monospace,monospace}.edit textarea{width:100%;min-height:230px;resize:vertical;border:0;outline:0;background:transparent;color:#e4eae4;font:11px/1.7 ui-monospace,monospace;white-space:pre;tab-size:4}.console{border-top:1px solid #3b443e}.console header{padding:7px 10px;background:#29312d;color:#aab4ac;font-size:9px}.console pre{min-height:55px;margin:0;padding:10px;color:#bed0bd;white-space:pre-wrap;font:10px/1.6 ui-monospace,monospace}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.form{display:grid;gap:8px}.form input,.form textarea{padding:9px;border:1px solid var(--line);border-radius:4px;background:var(--card);color:var(--ink);font-size:10px}.class-card,.project{margin-top:8px;padding:10px;border:1px solid var(--line);border-radius:4px}.class-card h3,.project h3{margin:0;font-size:11px}.code{color:var(--green);font:11px ui-monospace,monospace;letter-spacing:1px}.tests{display:grid;gap:6px;margin-top:10px}.test{padding:8px;border:1px solid var(--line);border-radius:4px;font-size:10px}.pass{background:var(--gs);color:var(--green)}.fail{background:#f4e9e4;color:var(--rust)}.chat-button{position:fixed;right:20px;bottom:18px;z-index:8;padding:11px 14px;border:0;border-radius:5px;background:var(--green);color:white;box-shadow:0 10px 30px #14201720;font-size:10px;font-weight:750}.chat{position:fixed;right:20px;bottom:66px;z-index:9;display:none;flex-direction:column;width:min(365px,calc(100vw - 24px));height:min(510px,calc(100vh - 100px));overflow:hidden;border:1px solid var(--line);border-radius:8px;background:var(--card);box-shadow:0 20px 70px #14201738}.chat.open{display:flex}.chat-head{display:flex;justify-content:space-between;padding:11px;border-bottom:1px solid var(--line)}.chat-head strong{font-size:11px}.chat-head small{display:block;color:var(--muted);font-size:8px}.chat-head button{border:0;background:none;font-size:17px}.chat-info{margin:8px;padding:8px;border-radius:4px;background:var(--soft);color:var(--muted);font-size:8px}.messages{flex:1;overflow:auto;display:grid;align-content:start;gap:7px;padding:9px}.bubble{max-width:89%;padding:8px 9px;border:1px solid var(--line);border-radius:6px;background:var(--soft);font-size:10px;line-height:1.6;white-space:pre-wrap;overflow-wrap:anywhere}.bubble.user{justify-self:end;background:var(--gs)}.quick{display:flex;gap:4px;overflow:auto;padding:7px;border-top:1px solid var(--line)}.quick button{flex:none;padding:5px 7px;border:1px solid var(--line);border-radius:20px;background:var(--card);font-size:8px}.chat-form{display:flex;gap:5px;padding:8px;border-top:1px solid var(--line)}.chat-form textarea{flex:1;resize:none;padding:7px;border:1px solid var(--line);border-radius:4px;background:var(--card);color:var(--ink);font-size:10px}.chat-form button{border:0;border-radius:4px;background:var(--green);color:white;padding:0 12px}.toast{position:fixed;bottom:15px;left:50%;z-index:12;opacity:0;transform:translate(-50%,8px);padding:9px 12px;border:1px solid var(--line);border-left:3px solid var(--green);border-radius:4px;background:var(--card);font-size:10px;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}@media(max-width:850px){.layout{display:block}aside{position:fixed;z-index:7;top:64px;left:0;width:210px;height:calc(100vh - 64px);background:var(--bg);transform:translateX(-105%);transition:.2s}aside.open{transform:none}.hero{grid-template-columns:1fr;gap:22px}.grid{grid-template-columns:1fr}.course,.two{grid-template-columns:1fr}.main{padding:21px 16px}.head{align-items:flex-start;flex-direction:column}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style></head><body>
+<header class="top"><button class="brand" data-go="home"><span class="mark">m.</span><span>multicode<small>HỌC BẰNG CÁCH LÀM</small></span></button><div class="right"><span class="status" id="net">● Kết nối sẵn sàng</span><button id="theme">◐ Giao diện</button><button id="rename">Khách · Đổi tên</button><button id="menu">☰</button></div></header>
+<div class="layout"><aside id="side"><div class="eyebrow">KHÔNG GIAN HỌC</div><nav class="nav"><button class="active" data-go="home">⌂　Tổng quan</button><button data-go="course">▤　Lộ trình Python</button><button data-go="ide">⌘　Trình soạn thảo</button><button data-go="arena">◈　Bài thử thách</button><button data-go="classroom">▦　Lớp học</button><button data-go="projects">▧　Dự án</button><button data-go="profile">◎　Tiến độ</button></nav><div class="note">Bài học và dự án lưu trên thiết bị. Chat dùng hướng dẫn cục bộ.</div></aside><main class="main">
+<section class="page active" id="page-home"><div class="eyebrow">XƯỞNG HỌC LẬP TRÌNH · BẢN ĐỊA PHƯƠNG</div><div class="hero"><div><h1>Học lập trình<br><em> Đơn giản hơn</em></h1><p>Học Python từng bước, thử ý tưởng trong trình soạn thảo và lưu dự án ngay trên thiết bị.</p><div class="actions"><button class="btn primary" data-go="course">Bắt đầu lộ trình →</button> <button class="btn" data-go="ide">Mở trình soạn thảo</button></div><span class="status">● Hoạt động cục bộ sau lần tải đầu</span></div><div class="sample"><header>buoi_hoc_01.py　 PYTHON · VI</header><pre># Bắt đầu từ một câu hỏi&#10;ten = "Lan"&#10;diem = 9&#10;nếu diem >= 8:&#10;    in(f"Chào {ten}!")</pre><footer>● Sẵn sàng　<button data-go="ide">Mở IDE ↗</button></footer></div></div><div class="eyebrow">BẮT ĐẦU TỪ ĐÂU</div><div class="grid" style="margin-top:9px"><button class="tile" data-go="course"><small>01 / HỌC</small><h3>Python căn bản</h3><p>12 chặng, từ câu lệnh đầu tiên đến dự án nhỏ.</p><span class="muted" id="home-progress">0 / 12 hoàn thành</span></button><button class="tile" data-go="arena"><small>02 / LUYỆN</small><h3>Bài tập tư duy</h3><p>Chạy test công khai ngay trên trình duyệt.</p></button><button class="tile" data-go="classroom"><small>03 / KẾT NỐI</small><h3>Lớp học demo</h3><p>Tạo lớp và xem bài nộp trong cùng trình duyệt.</p></button></div></section>
+<section class="page" id="page-course"><div class="head"><div><div class="eyebrow">HỌC THEO NHỊP CỦA BẠN</div><h1>Lộ trình Python</h1><p>Ví dụ, câu hỏi kiểm tra và tiến độ lưu cục bộ.</p></div><strong id="progress-count">0 / 12</strong></div><div class="course"><div class="modules" id="modules"></div><article class="panel lesson" id="lesson"><h2>Chọn một chặng</h2><p>Tiến độ được lưu trên trình duyệt này.</p></article></div></section>
+<section class="page" id="page-ide"><div class="head"><div><div class="eyebrow">WORKBENCH / LOCAL</div><h1>Trình soạn thảo</h1><p>Viết, chạy và tải mã nguồn.</p></div><span class="status">● Chạy cục bộ</span></div><div class="ide"><div class="idebar"><div>Ngôn ngữ <select id="lang"><option value="vi">Python tiếng Việt</option><option value="py">Python chuẩn</option><option value="js">JavaScript</option><option value="html">HTML xem trước</option></select>　<span id="filename">main.vi.py</span></div><div id="actions"><button id="run" class="primary">▶ Chạy mã</button> <button id="check">Kiểm tra</button> <button id="save">Lưu</button> <button id="download">Tải tệp</button></div></div><div class="edit"><pre id="gutter" class="gutter">1</pre><textarea id="editor" spellcheck="false" aria-label="Mã nguồn"></textarea></div><div class="console"><header>ĐẦU RA　 <label>Nhập liệu <input id="stdin" placeholder="Một giá trị mỗi dòng"></label>　<button id="clear">Xóa</button></header><pre id="output">Kết quả chương trình xuất hiện ở đây.</pre><iframe id="preview" title="Xem trước HTML" sandbox hidden style="width:100%;height:220px;border:0;background:white"></iframe></div></div><p class="muted">Python dùng bộ thông dịch học tập (không phải CPython); JavaScript chạy trong Worker; HTML preview tắt script và tải tài nguyên bên ngoài.</p></section>
+<section class="page" id="page-arena"><div class="head"><div><div class="eyebrow">THỬ THÁCH CÁ NHÂN · KHÔNG CẦN MẠNG</div><h1>Tìm số chẵn lớn nhất</h1><p>Trả về số chẵn lớn nhất; nếu không có, trả về -1.</p></div><span class="muted">Không có đối thủ giả lập</span></div><div class="two"><article class="panel"><h3>Yêu cầu</h3><p class="muted">Định nghĩa hàm so_chan_lon_nhat(ds). Không đổi danh sách đầu vào.</p><p class="muted">[1, 3, 4, 8, 5] → 8</p><button id="challenge-open" class="btn primary">Mở trong IDE →</button></article><article class="panel"><div style="display:flex;justify-content:space-between"><h3>Kết quả test</h3><button id="challenge-run" class="btn primary">Chạy kiểm tra</button></div><div id="tests" class="tests"><div class="test">○ Ca 1 · cần 8</div><div class="test">○ Ca 2 · cần -1</div><div class="test">○ Ca 3 · cần 100</div></div><p class="muted">Test chạy trên thiết bị; không có xếp hạng trực tuyến.</p></article></div></section>
+<section class="page" id="page-classroom"><div class="head"><div><div class="eyebrow">DỮ LIỆU DEMO · CÙNG TRÌNH DUYỆT</div><h1>Lớp học</h1><p>Đồng bộ nhiều thiết bị cần máy chủ.</p></div><div><button data-role="student" class="btn">Học sinh</button> <button data-role="teacher" class="btn">Giáo viên</button></div></div><div id="class-content"></div></section>
+<section class="page" id="page-projects"><div class="head"><div><div class="eyebrow">THƯ VIỆN CÁ NHÂN</div><h1>Dự án</h1><p>Lưu, mở, nhập và tải mã nguồn.</p></div><button id="new-project" class="btn primary">＋ Tạo dự án</button></div><div class="panel"><input id="search-project" placeholder="Tìm dự án…"> <button id="import">Nhập tệp</button><input id="file" type="file" accept=".py,.js,.html" hidden></div><div id="project-list" class="grid" style="margin-top:10px"></div></section>
+<section class="page" id="page-profile"><div class="head"><div><div class="eyebrow">TIẾN ĐỘ TRÊN THIẾT BỊ</div><h1 id="profile-name">Khách</h1><p>Thống kê từ hoạt động đã lưu.</p></div><button id="profile-edit" class="btn">Đổi tên</button></div><div class="grid"><article class="tile"><small>CHẶNG HỌC</small><h3 id="stat-lessons">0</h3></article><article class="tile"><small>DỰ ÁN</small><h3 id="stat-projects">0</h3></article><article class="tile"><small>BÀI NỘP</small><h3 id="stat-submissions">0</h3></article></div></section>
+</main></div>
+<button class="chat-button" id="chat-toggle">☷　Chat hướng dẫn</button><section class="chat" id="chat" aria-label="Chatbox hướng dẫn"><header class="chat-head"><div><strong>Góc hướng dẫn</strong><small>Trả lời cục bộ · không gửi dữ liệu</small></div><button id="chat-close">×</button></header><div class="chat-info">Bộ hướng dẫn theo quy tắc có sẵn; không phải AI trực tuyến.</div><div class="messages" id="messages" aria-live="polite"></div><div class="quick"><button data-prompt="Giải thích mã hiện tại">Giải thích mã</button><button data-prompt="Tìm lỗi thường gặp">Tìm lỗi</button><button data-prompt="Cho mình một gợi ý">Gợi ý</button><button data-prompt="Độ phức tạp Big-O">Big-O</button></div><form class="chat-form" id="chat-form"><textarea id="chat-input" rows="1" placeholder="Hỏi về bài học hoặc mã nguồn…"></textarea><button>Gửi</button></form></section><div class="toast" id="toast"></div>
+<script>// PHẦN 1: BỘ THÔNG DỊCH PYTHON TIẾNG VIỆT THUẦN JAVASCRIPT (HDUOWGG STUDIO)
+    // =========================================================================
+    class F { constructor(v) { this.v = v; } }
+    class PE { constructor(m, l) { this.m = m; this.l = l; } }
+    class Ret { constructor(v) { this.v = v; } }
+    const E = (m, l) => new PE(m, l);
+    const BRK = {};
+    const CNT = {};
+    const U = v => v instanceof F ? v.v : v;
+    const K = U;
+
+    const VI = {
+      'nếu': 'if',
+      'còn_nếu': 'elif',
+      'ngược_lại': 'else',
+      'khi': 'while',
+      'với': 'for',
+      'trong': 'in',
+      'hàm': 'def',
+      'trả_về': 'return',
+      'dừng': 'break',
+      'tiếp_tục': 'continue',
+      'bỏ_qua': 'pass',
+      'và': 'and',
+      'hoặc': 'or',
+      'không': 'not',
+      'Đúng': 'True',
+      'Sai': 'False',
+      'Rỗng': 'None',
+      'toàn_cục': 'global',
+      'nhập_khẩu': 'import',
+      'từ': 'from',
+      'là': 'is',
+      'in': 'print',
+      'nhập': 'input',
+      'phạm_vi': 'range',
+      'độ_dài': 'len',
+      'số_nguyên': 'int',
+      'số_thực': 'float',
+      'chuỗi': 'str',
+      'danh_sách': 'list',
+      'tổng': 'sum',
+      'nhỏ_nhất': 'min',
+      'lớn_nhất': 'max',
+      'sắp_xếp': 'sorted',
+      'làm_tròn': 'round',
+      'trị_tuyệt_đối': 'abs',
+      'thêm': 'append',
+      'chữ_hoa': 'upper',
+      'chữ_thường': 'lower',
+      'tách': 'split',
+      'nối': 'join',
+      'khoá': 'keys',
+      'giá_trị': 'values'
+    };
+
+    const KW = new Set('if elif else while for in def return break continue pass and or not is True False None global import from'.split(' '));
+    const OPR = /^(\*\*=|\/\/=|==|!=|<=|>=|\*\*|\/\/|\+=|-=|\*=|\/=|%=|[-+*\/%<>=()\[\]{},:.])/;
+    let CV = 0;
+    let steps = 0;
+    let depth = 0;
+    let OUT;
+    let LINE;
+
+    function lex(src, vi) {
+      const T = [];
+      const ind = [0];
+      const L = src.normalize('NFC').replace(/\r/g, '').split('\n');
+      let d = 0;
+      for (let n = 0; n < L.length; n++) {
+        const s = L[n];
+        const l = n + 1;
+        let i = 0;
+        if (!d) {
+          if (/^\s*(#.*)?$/.test(s)) continue;
+          const m = s.match(/^[ \t]*/)[0].replace(/\t/g, '    ').length;
+          if (m > ind[ind.length - 1]) {
+            ind.push(m);
+            T.push({ t: 'IN', l });
+          } else {
+            while (m < ind[ind.length - 1]) {
+              ind.pop();
+              T.push({ t: 'DE', l });
+            }
+            if (m != ind[ind.length - 1]) throw E('Thụt lề không khớp với các dòng trước', l);
+          }
+        }
+        while (i < s.length) {
+          const c = s[i];
+          if (c == ' ' || c == '\t') { i++; continue; }
+          if (c == '#') break;
+          const r = s.slice(i);
+          let m;
+          if (m = r.match(/^([fFrR]?)(["'])((?:\\.|(?!\2)[^\\])*)\2/)) {
+            T.push({
+              t: 'STR',
+              v: /r/i.test(m[1]) ? m[3] : m[3].replace(/\\(.)/g, (_, x) => ({ n: '\n', t: '\t' }[x] ?? x)),
+              f: /f/i.test(m[1]),
+              l
+            });
+            i += m[0].length;
+          } else if (/^[fFrR]?["']/.test(r)) throw E('Chuỗi chưa được đóng dấu nháy', l);
+          else if (m = r.match(/^\d+\.?\d*(?:[eE][+-]?\d+)?/)) {
+            T.push({
+              t: 'NUM',
+              v: parseFloat(m[0]),
+              f: /[.eE]/.test(m[0]),
+              l
+            });
+            i += m[0].length;
+          } else if (m = r.match(/^[\p{L}_][\p{L}\p{N}_]*/u)) {
+            let w = m[0];
+            if (vi && VI[w]) w = VI[w];
+            T.push({ t: KW.has(w) ? 'KW' : 'N', v: w, l });
+            i += m[0].length;
+          } else if (m = r.match(OPR)) {
+            const o = m[0];
+            if ('([{'.includes(o)) d++;
+            if (')]}'.includes(o)) d = Math.max(0, d - 1);
+            T.push({ t: 'OP', v: o, l });
+            i += o.length;
+          } else throw E(`Ký tự lạ "${c}"`, l);
+        }
+        if (!d) T.push({ t: 'NL', l });
+      }
+      while (ind.length > 1) {
+        ind.pop();
+        T.push({ t: 'DE', l: L.length });
+      }
+      T.push({ t: 'END', l: L.length });
+      return T;
+    }
+
+    function fparts(s, l) {
+      const P = [];
+      let i = 0, t = '';
+      while (i < s.length) {
+        const c = s[i];
+        if (c == '{' && s[i + 1] == '{') { t += '{'; i += 2; }
+        else if (c == '}' && s[i + 1] == '}') { t += '}'; i += 2; }
+        else if (c == '{') {
+          const j = s.indexOf('}', i);
+          if (j < 0) throw E('f-string thiếu dấu "}"', l);
+          let x = s.slice(i + 1, j);
+          let sp = '';
+          const m = x.match(/^(.+?):([<>^]?\d*\.?\d*[fds]?)$/);
+          if (m) { x = m[1]; sp = m[2]; }
+          P.push(t);
+          t = '';
+          P.push({ e: parse(lex(x, CV))[0].e, sp });
+          i = j + 1;
+        } else {
+          t += c;
+          i++;
+        }
+      }
+      P.push(t);
+      return P;
+    }
+
+    function parse(T) {
+      let p = 0;
+      const pk = () => T[p];
+      const is = v => {
+        const k = T[p];
+        return (k.t == 'OP' || k.t == 'KW') && k.v == v;
+      };
+      const eat = v => is(v) ? T[p++] : 0;
+      const ds = k => k.v ?? 'cuối dòng';
+      const ex = v => {
+        if (!eat(v)) throw E(`Thiếu "${v}" (gặp "${ds(T[p])}")`, T[p].l);
+      };
+      const nm = () => {
+        const k = T[p];
+        if (k.t != 'N') throw E(`Cần một tên biến, gặp "${ds(k)}"`, k.l);
+        p++;
+        return k.v;
+      };
+      const end = () => {
+        if (T[p].t == 'NL') p++;
+        else if (T[p].t != 'END' && T[p].t != 'DE') throw E(`Ký tự thừa "${ds(T[p])}"`, T[p].l);
+      };
+      const lg = (w, nx) => () => {
+        let a = nx();
+        while (is(w)) {
+          p++;
+          a = { k: w, a, b: nx() };
+        }
+        return a;
+      };
+      const bin = (ops, nx) => () => {
+        let a = nx();
+        while (T[p].t == 'OP' && ops.includes(T[p].v)) {
+          const t = T[p++];
+          a = { k: 'bin', o: t.v, a, b: nx(), l: t.l };
+        }
+        return a;
+      };
+      const pw = () => {
+        const a = post();
+        if (is('**')) {
+          const l = T[p++].l;
+          return { k: 'bin', o: '**', a, b: un(), l };
+        }
+        return a;
+      };
+      const un = () => {
+        if (is('-') || is('+')) {
+          const o = T[p++].v;
+          return { k: 'un', o, a: un(), l: T[p].l };
+        }
+        return pw();
+      };
+      const mul = bin(['*', '/', '//', '%'], un);
+      const add = bin(['+', '-'], mul);
+      const cmpe = () => {
+        const a = add();
+        const r = [];
+        const l = T[p].l;
+        for (;;) {
+          let o, k = T[p];
+          if (k.t == 'OP' && ['==', '!=', '<', '>', '<=', '>='].includes(k.v)) {
+            o = k.v; p++;
+          } else if (is('in')) {
+            o = 'in'; p++;
+          } else if (is('not') && T[p + 1].v == 'in') {
+            o = 'not in'; p += 2;
+          } else if (is('is')) {
+            p++; o = eat('not') ? 'is not' : 'is';
+          } else break;
+          r.push([o, add()]);
+        }
+        return r.length ? { k: 'cmp', a, r, l } : a;
+      };
+      const nt = () => is('not') ? (p++, { k: 'not', a: nt() }) : cmpe();
+      const and = lg('and', nt);
+      const or = lg('or', and);
+
+      function ex1() {
+        const a = or();
+        if (is('if')) {
+          p++;
+          const c = or();
+          ex('else');
+          return { k: 'tern', c, a, b: ex1() };
+        }
+        return a;
+      }
+
+      function exprs() {
+        const f = ex1();
+        if (!is(',')) return f;
+        const e = [f];
+        while (eat(',')) {
+          if (T[p].t == 'NL' || is('=') || is(')')) break;
+          e.push(ex1());
+        }
+        return { k: 'tup', e };
+      }
+
+      function comp() {
+        p++;
+        const t = [nm()];
+        while (eat(',')) t.push(nm());
+        ex('in');
+        const it = or();
+        return { t, it, cond: eat('if') ? or() : null };
+      }
+
+      function post() {
+        let a = atom();
+        for (;;) {
+          const l = T[p].l;
+          if (eat('(')) {
+            const g = [];
+            const kw = {};
+            while (!is(')')) {
+              if (T[p].t == 'N' && T[p + 1].t == 'OP' && T[p + 1].v == '=') {
+                const n = nm();
+                p++;
+                kw[n] = ex1();
+              } else g.push(ex1());
+              if (!eat(',')) break;
+            }
+            ex(')');
+            a = { k: 'call', f: a, g, kw, l };
+          } else if (eat('[')) {
+            const x = is(':') ? null : ex1();
+            if (eat(':')) {
+              const y = is(']') ? null : ex1();
+              ex(']');
+              a = { k: 'sl', a, x, y, l };
+            } else {
+              ex(']');
+              a = { k: 'idx', a, i: x, l };
+            }
+          } else if (eat('.')) {
+            a = { k: 'att', a, n: nm(), l };
+          } else return a;
+        }
+      }
+
+      function atom() {
+        const k = T[p++];
+        const l = k.l;
+        const c = v => ({ k: 'c', v });
+        if (k.t == 'NUM') return c(k.f ? new F(k.v) : k.v);
+        if (k.t == 'STR') return k.f ? { k: 'fs', p: fparts(k.v, l) } : c(k.v);
+        if (k.t == 'N') return { k: 'nm', n: k.v, l };
+        if (k.t == 'KW' && k.v == 'True') return c(true);
+        if (k.t == 'KW' && k.v == 'False') return c(false);
+        if (k.t == 'KW' && k.v == 'None') return c(null);
+        if (k.v == '(' && k.t == 'OP') {
+          if (eat(')')) return { k: 'tup', e: [] };
+          const e = exprs();
+          ex(')');
+          return e;
+        }
+        if (k.v == '[' && k.t == 'OP') {
+          if (eat(']')) return { k: 'list', e: [] };
+          const f = ex1();
+          if (is('for')) {
+            const q = comp();
+            ex(']');
+            return { k: 'lc', f, ...q, l };
+          }
+          const e = [f];
+          while (eat(',') && !is(']')) e.push(ex1());
+          ex(']');
+          return { k: 'list', e };
+        }
+        if (k.v == '{' && k.t == 'OP') {
+          const e = [];
+          while (!is('}')) {
+            const a = ex1();
+            ex(':');
+            e.push([a, ex1()]);
+            if (!eat(',')) break;
+          }
+          ex('}');
+          return { k: 'dict', e };
+        }
+        throw E(`Cú pháp sai gần "${ds(k)}"`, l);
+      }
+
+      function block() {
+        ex(':');
+        const b = [];
+        if (T[p].t == 'NL') {
+          p++;
+          if (T[p].t != 'IN') throw E('Cần thụt lề sau dấu ":"', T[p].l);
+          p++;
+          while (T[p].t != 'DE' && T[p].t != 'END') b.push(st());
+          if (T[p].t == 'DE') p++;
+        } else b.push(st());
+        return b;
+      }
+
+      function st() {
+        const k = T[p];
+        const l = k.l;
+        if (k.t == 'KW') {
+          switch (k.v) {
+            case 'if': {
+              p++;
+              const c = ex1();
+              const b = block();
+              let o = [];
+              if (is('elif')) {
+                T[p].v = 'if';
+                o = [st()];
+              } else if (eat('else')) {
+                o = block();
+              }
+              return { k: 'if', c, b, o, l };
+            }
+            case 'elif':
+            case 'else': throw E(`"${k.v}" không có "nếu" đi trước`, l);
+            case 'while': {
+              p++;
+              const c = ex1();
+              return { k: 'while', c, b: block(), l };
+            }
+            case 'for': {
+              p++;
+              const t = [nm()];
+              while (eat(',')) t.push(nm());
+              ex('in');
+              const it = ex1();
+              return { k: 'for', t, it, b: block(), l };
+            }
+            case 'def': {
+              p++;
+              const n = nm();
+              const ps = [];
+              ex('(');
+              while (!is(')')) {
+                const a = nm();
+                ps.push({ n: a, d: eat('=') ? ex1() : null });
+                if (!eat(',')) break;
+              }
+              ex(')');
+              return { k: 'def', n, p: ps, b: block(), l };
+            }
+            case 'return': {
+              p++;
+              const v = T[p].t == 'NL' ? null : exprs();
+              end();
+              return { k: 'return', v, l };
+            }
+            case 'break':
+            case 'continue':
+            case 'pass': {
+              p++; end(); return { k: k.v, l };
+            }
+            case 'global': {
+              p++;
+              const a = [nm()];
+              while (eat(',')) a.push(nm());
+              end();
+              return { k: 'glob', a, l };
+            }
+            case 'import':
+            case 'from': {
+              const f = k.v == 'from';
+              const a = [];
+              p++;
+              while (T[p].t != 'NL' && T[p].t != 'END') a.push(T[p++].v);
+              end();
+              return { k: 'imp', f, a, l };
+            }
+          }
+        }
+        const e = exprs();
+        if (is('=')) {
+          const t = [e];
+          while (eat('=')) t.push(exprs());
+          end();
+          return { k: 'asg', t: t.slice(0, -1), v: t.pop(), l };
+        }
+        const a = T[p];
+        if (a.t == 'OP' && /^(\+|-|\*|\/|\/\/|%|\*\*)=$/.test(a.v)) {
+          p++;
+          const v = exprs();
+          end();
+          return { k: 'aug', t: e, o: a.v.slice(0, -1), v, l };
+        }
+        end();
+        return { k: 'ex', e, l };
+      }
+
+      const r = [];
+      while (T[p].t != 'END') {
+        if (T[p].t == 'DE' || T[p].t == 'IN') throw E('Thụt lề không hợp lệ', T[p].l);
+        r.push(st());
+      }
+      return r;
+    }
+
+    class Env {
+      constructor(p) {
+        this.m = new Map();
+        this.p = p;
+        this.g = null;
+      }
+      get(n, l) {
+        for (let e = this; e; e = e.p) {
+          if (e.m.has(n)) return e.m.get(n);
+        }
+        throw E(`Lỗi tên: "${n}" chưa được định nghĩa`, l);
+      }
+      set(n, x) {
+        if (this.g && this.g.has(n)) {
+          let e = this;
+          while (e.p) e = e.p;
+          e.m.set(n, x);
+        } else {
+          this.m.set(n, x);
+        }
+      }
+    }
+
+    const tup = (...x) => (x.tu = true, x);
+    const tn = v => v === null ? 'None' : typeof v == 'string' ? 'chuỗi' : v instanceof F ? 'số thực' : typeof v == 'number' ? 'số nguyên' : typeof v == 'boolean' ? 'bool' : Array.isArray(v) ? (v.tu ? 'tuple' : 'danh sách') : v instanceof Map ? 'từ điển' : 'hàm';
+
+    function str(v) {
+      if (v === null) return 'None';
+      if (v === true) return 'True';
+      if (v === false) return 'False';
+      if (v instanceof F) {
+        const x = v.v;
+        return isNaN(x) ? 'nan' : !isFinite(x) ? (x > 0 ? 'inf' : '-inf') : Number.isInteger(x) && Math.abs(x) < 1e16 ? x.toFixed(1) : String(x);
+      }
+      if (typeof v == 'string') return v;
+      if (typeof v == 'number') return String(v);
+      if (Array.isArray(v)) {
+        const s = v.map(rp);
+        return v.tu ? '(' + s.join(', ') + (s.length == 1 ? ',' : '') + ')' : '[' + s.join(', ') + ']';
+      }
+      if (v instanceof Map) return '{' + [...v].map(([k, x]) => rp(k) + ': ' + rp(x)).join(', ') + '}';
+      return v && v.fn ? `<hàm ${v.name}>` : String(v);
+    }
+    const rp = v => typeof v == 'string' ? "'" + v.replace(/'/g, "\\'") + "'" : str(v);
+    const truth = v => v === null ? false : v instanceof F ? v.v !== 0 : Array.isArray(v) || typeof v == 'string' ? v.length > 0 : v instanceof Map ? v.size > 0 : !!v;
+
+    function eq(a, b) {
+      a = U(a); b = U(b);
+      if (Array.isArray(a) && Array.isArray(b)) return a.length == b.length && a.every((x, i) => eq(x, b[i]));
+      if (a instanceof Map && b instanceof Map) return a.size == b.size && [...a].every(([k, x]) => b.has(k) && eq(x, b.get(k)));
+      return a === b || (typeof a != 'string' && typeof b != 'string' && a == b);
+    }
+    const cmpf = (a, b) => {
+      a = U(a); b = U(b);
+      return a < b ? -1 : a > b ? 1 : 0;
+    };
+
+    function iter(v, l) {
+      if (Array.isArray(v)) return v;
+      if (typeof v == 'string') return [...v];
+      if (v instanceof Map) return [...v.keys()];
+      throw E(`Lỗi kiểu: ${tn(v)} không thể duyệt qua`, l);
+    }
+
+    function arith(o, a, b, l) {
+      const fa = a instanceof F, fb = b instanceof F;
+      const x = U(a), y = U(b);
+      if (o == '+') {
+        if (typeof x == 'string' && typeof y == 'string') return x + y;
+        if (Array.isArray(x) && Array.isArray(y)) return x.concat(y);
+      }
+      if (o == '*') {
+        if (typeof x == 'string' && typeof y == 'number') return x.repeat(Math.max(0, y));
+        if (typeof y == 'string' && typeof x == 'number') return y.repeat(Math.max(0, x));
+        if (Array.isArray(x) && typeof y == 'number') {
+          let q = [];
+          for (let i = 0; i < y; i++) q = q.concat(x);
+          return q;
+        }
+      }
+      const ok = z => typeof z == 'number' || typeof z == 'boolean';
+      if (!ok(x) || !ok(y)) throw E(`Lỗi kiểu: không thể dùng "${o}" giữa ${tn(a)} và ${tn(b)}`, l);
+      let r, fl = fa || fb;
+      if ((o == '/' || o == '//' || o == '%') && y == 0) throw E('Lỗi chia cho 0', l);
+      switch (o) {
+        case '+': r = x + y; break;
+        case '-': r = x - y; break;
+        case '*': r = x * y; break;
+        case '/': r = x / y; fl = 1; break;
+        case '//': r = Math.floor(x / y); break;
+        case '%': r = ((x % y) + y) % y; break;
+        case '**': r = x ** y; if (y < 0) fl = 1; break;
+      }
+      return fl ? new F(r) : r;
+    }
+
+    function has(b, a, l) {
+      if (typeof b == 'string') return b.includes(a);
+      if (b instanceof Map) return b.has(K(a));
+      if (Array.isArray(b)) return b.some(x => eq(x, a));
+      throw E(`Lỗi kiểu: toán tử "in" không dùng với ${tn(b)}`, l);
+    }
+
+    function cmp(o, a, b, l) {
+      switch (o) {
+        case '==': return eq(a, b);
+        case '!=': return !eq(a, b);
+        case 'in': return has(b, a, l);
+        case 'not in': return !has(b, a, l);
+        case 'is': return a === b || (a instanceof F && b instanceof F && a.v === b.v);
+        case 'is not': return !cmp('is', a, b);
+      }
+      const x = U(a), y = U(b);
+      if (typeof x != typeof y && !(typeof x != 'string' && typeof y != 'string')) throw E(`Lỗi kiểu: không thể so sánh ${tn(a)} với ${tn(b)}`, l);
+      return o == '<' ? x < y : o == '>' ? x > y : o == '<=' ? x <= y : x >= y;
+    }
+
+    function fmt(v, sp) {
+      if (!sp) return str(v);
+      const m = sp.match(/^([<>^]?)(\d*)(?:\.(\d+))?([fds]?)$/);
+      const x = U(v), w = +m[2] || 0;
+      let s = m[4] == 'f' || (m[3] && typeof x == 'number') ? Number(x).toFixed(m[3] ?? 6) : str(v);
+      const a = m[1] || (typeof x == 'number' ? '>' : '<');
+      if (s.length < w) {
+        const n = w - s.length;
+        s = a == '>' ? ' '.repeat(n) + s : a == '^' ? ' '.repeat(n >> 1) + s + ' '.repeat(n - (n >> 1)) : s + ' '.repeat(n);
+      }
+      return s;
+    }
+
+    function ev(n, v) {
+      switch (n.k) {
+        case 'c': return n.v;
+        case 'nm': return v.get(n.n, n.l);
+        case 'tup': return tup(...n.e.map(x => ev(x, v)));
+        case 'list': return n.e.map(x => ev(x, v));
+        case 'dict': return new Map(n.e.map(([a, b]) => [K(ev(a, v)), ev(b, v)]));
+        case 'fs': return n.p.map(q => typeof q == 'string' ? q : fmt(ev(q.e, v), q.sp)).join('');
+        case 'bin': return arith(n.o, ev(n.a, v), ev(n.b, v), n.l);
+        case 'un': {
+          const x = ev(n.a, v);
+          if (typeof U(x) != 'number' && typeof x != 'boolean') throw E(`Lỗi kiểu: không thể dùng "${n.o}" với ${tn(x)}`, n.l);
+          return n.o == '-' ? (x instanceof F ? new F(-x.v) : -x) : x;
+        }
+        case 'not': return !truth(ev(n.a, v));
+        case 'and': {
+          const a = ev(n.a, v);
+          return truth(a) ? ev(n.b, v) : a;
+        }
+        case 'or': {
+          const a = ev(n.a, v);
+          return truth(a) ? a : ev(n.b, v);
+        }
+        case 'tern': return truth(ev(n.c, v)) ? ev(n.a, v) : ev(n.b, v);
+        case 'cmp': {
+          let a = ev(n.a, v);
+          for (const [o, e] of n.r) {
+            const b = ev(e, v);
+            if (!cmp(o, a, b, n.l)) return false;
+            a = b;
+          }
+          return true;
+        }
+        case 'call': return call(n, v);
+        case 'att': {
+          const o = ev(n.a, v);
+          if (o && o.mod && n.n in o) return o[n.n];
+          throw E(`Lỗi thuộc tính: ${tn(o)} không có "${n.n}"`, n.l);
+        }
+        case 'idx': {
+          const o = ev(n.a, v);
+          const i = ev(n.i, v);
+          if (o instanceof Map) {
+            const k = K(i);
+            if (!o.has(k)) throw E(`Lỗi khoá: ${rp(i)} không có trong từ điển`, n.l);
+            return o.get(k);
+          }
+          if (typeof o == 'string' || Array.isArray(o)) {
+            let x = U(i);
+            if (typeof x != 'number') throw E('Lỗi kiểu: chỉ số phải là số nguyên', n.l);
+            if (x < 0) x += o.length;
+            if (x < 0 || x >= o.length) throw E('Lỗi chỉ số: vượt quá phạm vi', n.l);
+            return o[x];
+          }
+          throw E(`Lỗi kiểu: ${tn(o)} không dùng được chỉ số`, n.l);
+        }
+        case 'sl': {
+          const o = ev(n.a, v);
+          let a = n.x ? U(ev(n.x, v)) : 0;
+          let b = n.y ? U(ev(n.y, v)) : o.length;
+          if (a < 0) a = Math.max(0, a + o.length);
+          if (b < 0) b += o.length;
+          return o.slice(a, b);
+        }
+        case 'lc': {
+          const r = [];
+          const e = new Env(v);
+          for (const x of iter(ev(n.it, v), n.l)) {
+            bind(n.t, x, e);
+            if (!n.cond || truth(ev(n.cond, e))) r.push(ev(n.f, e));
+          }
+          return r;
+        }
+      }
+    }
+
+    const bind = (t, x, e) => {
+      if (t.length == 1) e.set(t[0], x);
+      else {
+        const a = iter(x);
+        t.forEach((q, i) => e.set(q, a[i] ?? null));
+      }
+    };
+
+    function as(t, x, env) {
+      switch (t.k) {
+        case 'nm': return env.set(t.n, x);
+        case 'tup':
+        case 'list': {
+          const a = iter(x, t.l);
+          t.e.forEach((q, i) => as(q, a[i] ?? null, env));
+          return;
+        }
+        case 'idx': {
+          const o = ev(t.a, env);
+          const i = ev(t.i, env);
+          if (o instanceof Map) return o.set(K(i), x);
+          if (Array.isArray(o) && !o.tu) {
+            let k = U(i);
+            if (k < 0) k += o.length;
+            if (k < 0 || k >= o.length) throw E('Lỗi chỉ số: vượt quá phạm vi', t.l);
+            o[k] = x;
+            return;
+          }
+          throw E(`Lỗi kiểu: ${tn(o)} không cho phép gán theo chỉ số`, t.l);
+        }
+      }
+      throw E('Không thể gán giá trị cho biểu thức này', t.l);
+    }
+
+    const MT = {
+      s: {
+        upper: s => s.toUpperCase(),
+        lower: s => s.toLowerCase(),
+        strip: s => s.trim(),
+        capitalize: s => s.charAt(0).toUpperCase() + s.slice(1).toLowerCase(),
+        title: s => s.replace(/\S+/g, w => w[0].toUpperCase() + w.slice(1).toLowerCase()),
+        split: (s, a) => a[0] === undefined ? s.trim().split(/\s+/).filter(Boolean) : s.split(a[0]),
+        join: (s, a) => iter(a[0]).map(str).join(s),
+        replace: (s, a) => s.split(a[0]).join(a[1]),
+        startswith: (s, a) => s.startsWith(a[0]),
+        endswith: (s, a) => s.endsWith(a[0]),
+        find: (s, a) => s.indexOf(a[0]),
+        count: (s, a) => s.split(a[0]).length - 1,
+        isdigit: s => /^\d+$/.test(s)
+      },
+      l: {
+        append: (l, a) => (l.push(a[0]), null),
+        extend: (l, a) => (l.push(...iter(a[0])), null),
+        pop: (l, a) => {
+          if (!l.length) throw E('Lỗi chỉ số: pop từ danh sách rỗng');
+          return a.length ? l.splice(U(a[0]) < 0 ? l.length + U(a[0]) : U(a[0]), 1)[0] : l.pop();
+        },
+        insert: (l, a) => (l.splice(a[0], 0, a[1]), null),
+        remove: (l, a) => {
+          const i = l.findIndex(x => eq(x, a[0]));
+          if (i < 0) throw E('Lỗi giá trị: phần tử không có trong danh sách');
+          l.splice(i, 1);
+          return null;
+        },
+        sort: l => (l.sort(cmpf), null),
+        reverse: l => (l.reverse(), null),
+        index: (l, a) => {
+          const i = l.findIndex(x => eq(x, a[0]));
+          if (i < 0) throw E('Lỗi giá trị: phần tử không có trong danh sách');
+          return i;
+        },
+        count: (l, a) => l.filter(x => eq(x, a[0])).length
+      },
+      d: {
+        keys: d => [...d.keys()],
+        values: d => [...d.values()],
+        items: d => [...d].map(([k, x]) => tup(k, x)),
+        get: (d, a) => d.has(K(a[0])) ? d.get(K(a[0])) : (a[1] ?? null),
+        pop: (d, a) => {
+          const k = K(a[0]);
+          const x = d.get(k);
+          d.delete(k);
+          return x ?? null;
+        }
+      }
+    };
+
+    const fl = x => new F(x);
+    const BI = {
+      print: (a, k) => (OUT(a.map(str).join(k.sep ?? ' ') + (k.end ?? '\n')), null),
+      input: a => {
+        if (a.length) OUT(str(a[0]));
+        let x = LINE();
+        if (x === null) {
+          const q = typeof prompt == 'function' ? prompt(a.length ? str(a[0]) : '') : null;
+          if (q === null || q === undefined) throw E('Lỗi nhập: hết dữ liệu. Hãy điền vào ô "Dữ liệu nhập"');
+          x = q;
+        }
+        OUT(x + '\n');
+        return x;
+      },
+      len: a => {
+        const x = a[0];
+        if (typeof x == 'string' || Array.isArray(x)) return x.length;
+        if (x instanceof Map) return x.size;
+        throw E(`Lỗi kiểu: ${tn(x)} không có độ dài`);
+      },
+      range: a => {
+        let [s, e, t] = a.length == 1 ? [0, U(a[0]), 1] : [U(a[0]), U(a[1]), U(a[2] ?? 1)];
+        if (!t) throw E('Lỗi giá trị: bước của range không được bằng 0');
+        if (Math.abs((e - s) / t) > 2e6) throw E('range quá lớn');
+        const r = [];
+        for (let i = s; t > 0 ? i < e : i > e; i += t) r.push(i);
+        return r;
+      },
+      int: a => {
+        const v = U(a[0]);
+        if (typeof v == 'string') {
+          const t = v.trim();
+          if (!/^[+-]?\d+$/.test(t)) throw E(`Lỗi giá trị: không thể đổi "${v}" thành số nguyên`);
+          return parseInt(t);
+        }
+        return v === undefined ? 0 : Math.trunc(v);
+      },
+      float: a => {
+        const v = U(a[0]);
+        if (typeof v == 'string') {
+          const n = Number(v.trim());
+          if (v.trim() === '' || isNaN(n)) throw E(`Lỗi giá trị: không thể đổi "${v}" thành số thực`);
+          return fl(n);
+        }
+        return fl(+v);
+      },
+      str: a => a.length ? str(a[0]) : '',
+      bool: a => truth(a[0]),
+      list: a => a.length ? [...iter(a[0])] : [],
+      abs: a => a[0] instanceof F ? fl(Math.abs(a[0].v)) : Math.abs(a[0]),
+      sum: a => iter(a[0]).reduce((s, x) => arith('+', s, x), a[1] ?? 0),
+      min: a => (a.length == 1 ? iter(a[0]) : a).reduce((m, x) => cmpf(x, m) < 0 ? x : m),
+      max: a => (a.length == 1 ? iter(a[0]) : a).reduce((m, x) => cmpf(x, m) > 0 ? x : m),
+      round: a => {
+        const x = U(a[0]);
+        if (a[1] !== undefined) return fl(Number(x.toFixed(U(a[1]))));
+        let r = Math.round(x);
+        if (Math.abs(x % 1) == .5 && r % 2) r--;
+        return r;
+      },
+      sorted: (a, k) => {
+        const r = [...iter(a[0])].sort(cmpf);
+        return truth(k.reverse) ? r.reverse() : r;
+      },
+      reversed: a => [...iter(a[0])].reverse(),
+      enumerate: a => iter(a[0]).map((x, i) => tup(i, x)),
+      zip: a => {
+        const l = a.map(x => iter(x));
+        const n = Math.min(...l.map(x => x.length));
+        return Array.from({ length: n }, (_, i) => tup(...l.map(x => x[i])));
+      },
+      tuple: a => tup(...iter(a[0]))
+    };
+
+    const sq = a => {
+      const x = U(a[0]);
+      if (x < 0) throw E('Lỗi toán học: căn bậc hai của số âm');
+      return fl(Math.sqrt(x));
+    };
+
+    const MODS = {
+      math: {
+        mod: 1,
+        pi: fl(Math.PI),
+        e: fl(Math.E),
+        sqrt: sq,
+        floor: a => Math.floor(U(a[0])),
+        ceil: a => Math.ceil(U(a[0])),
+        sin: a => fl(Math.sin(U(a[0]))),
+        cos: a => fl(Math.cos(U(a[0]))),
+        pow: a => fl(U(a[0]) ** U(a[1])),
+        fabs: a => fl(Math.abs(U(a[0])))
+      },
+      random: {
+        mod: 1,
+        randint: a => U(a[0]) + Math.floor(Math.random() * (U(a[1]) - U(a[0]) + 1)),
+        random: () => fl(Math.random()),
+        choice: a => a[0][Math.floor(Math.random() * a[0].length)]
+      }
+    };
+
+    function callFn(f, g, kw, l) {
+      if (typeof f == 'function') return f(g, kw, l);
+      if (!f || !f.fn) throw E(`Lỗi kiểu: "${tn(f)}" không thể gọi như hàm`, l);
+      if (g.length > f.p.length) throw E(`Hàm ${f.name} nhận tối đa ${f.p.length} đối số, bạn truyền ${g.length}`, l);   
+      if (++depth > 250) {
+        depth = 0;
+        throw E('Lỗi đệ quy: gọi hàm quá sâu', l);
+      }
+      const e = new Env(f.env);
+      f.p.forEach((q, i) => {
+        e.m.set(q.n, g[i] !== undefined ? g[i] : kw[q.n] !== undefined ? kw[q.n] : q.d ? ev(q.d, f.env) : (() => {
+          throw E(`Hàm ${f.name} thiếu đối số "${q.n}"`, l);
+        })());
+      });
+      try {
+        run(f.b, e);
+      } catch (r) {
+        if (r instanceof Ret) return r.v;
+        throw r;
+      } finally {
+        depth = Math.max(0, depth - 1);
+      }
+      return null;
+    }
+
+    function call(n, v) {
+      const g = n.g.map(x => ev(x, v));
+      const kw = {};
+      for (const k in n.kw) kw[k] = ev(n.kw[k], v);
+      const f = n.f;
+      if (f.k == 'att') {
+        const o = ev(f.a, v);
+        if (o && o.mod) return callFn(o[f.n], g, kw, n.l);
+        const t = typeof o == 'string' ? 's' : Array.isArray(o) ? 'l' : o instanceof Map ? 'd' : 0;
+        const m = t && MT[t][f.n];
+        if (!m) throw E(`Lỗi thuộc tính: ${tn(o)} không có phương thức "${f.n}"`, n.l);
+        return m(o, g, n.l);
+      }
+      return callFn(ev(f, v), g, kw, n.l);
+    }
+
+    const run = (b, env) => {
+      for (const s of b) ex1(s, env);
+    };
+
+    function ex1(s, env) {
+      if (++steps > 4e6) throw E('Chương trình chạy quá lâu (có thể có vòng lặp vô hạn)', s.l);
+      try {
+        switch (s.k) {
+          case 'ex': ev(s.e, env); break;
+          case 'asg': {
+            const x = ev(s.v, env);
+            for (const t of s.t) as(t, x, env);
+            break;
+          }
+          case 'aug': as(s.t, arith(s.o, ev(s.t, env), ev(s.v, env), s.l), env); break;
+          case 'if': run(truth(ev(s.c, env)) ? s.b : s.o, env); break;
+          case 'while':
+            while (truth(ev(s.c, env))) {
+              try {
+                run(s.b, env);
+              } catch (e) {
+                if (e === BRK) break;
+                if (e !== CNT) throw e;
+              }
+              steps++ > 4e6 && ex1(s, env);
+            }
+            break;
+          case 'for':
+            for (const x of iter(ev(s.it, env), s.l)) {
+              bind(s.t, x, env);
+              try {
+                run(s.b, env);
+              } catch (e) {
+                if (e === BRK) break;
+                if (e !== CNT) throw e;
+              }
+            }
+            break;
+          case 'def':
+            env.set(s.n, { fn: 1, name: s.n, p: s.p, b: s.b, env });
+            break;
+          case 'return': throw new Ret(s.v ? ev(s.v, env) : null);
+          case 'break': throw BRK;
+          case 'continue': throw CNT;
+          case 'pass': break;
+          case 'glob': (env.g = env.g || new Set()).add(...s.a); break;
+          case 'imp': {
+            const mo = s.a[0];
+            if (!MODS[mo]) throw E(`Không tìm thấy module "${mo}" (có sẵn: math, random)`, s.l);
+            if (s.f) {
+              s.a.slice(2).filter(x => x != ',' && x != 'as').forEach(q => {
+                if (!(q in MODS[mo])) throw E(`Module "${mo}" không có "${q}"`, s.l);
+                env.set(q, MODS[mo][q]);
+              });
+            }
+            break;
+          }
+        }
+      } catch (e) {
+        if (e instanceof PE && e.l == null) e.l = s.l;
+        throw e;
+      }
+    }
+
+    function runPy(src, vi, inp, chk) {
+      let o = '';
+      let L = inp.split('\n');
+      let li = 0;
+      steps = 0;
+      depth = 0;
+      CV = vi;
+      OUT = s => { o += s; };
+      LINE = () => li < L.length && !(li == L.length - 1 && L[li] === '') ? L[li++] : null;
+      const t0 = performance.now();
+      try {
+        const ast = parse(lex(src, vi));
+        if (chk) return { o: '', ok: 1 };
+        const g = new Env();
+        for (const k in BI) g.m.set(k, BI[k]);
+        for (const k in MODS) g.m.set(k, MODS[k]);
+        run(ast, g);
+      } catch (e) {
+        return {
+          o,
+          e: e instanceof PE ? e : e === BRK || e === CNT || e instanceof Ret ? E('break / continue / return đặt sai chỗ', null) : e instanceof RangeError ? E('Lỗi đệ quy: gọi hàm quá sâu', null) : E('Lỗi hệ thống: ' + e.message, null)
+        };
+      }
+      return { o, ms: performance.now() - t0 };
+    }
+
+    // =========================================================================
+    </script>
+<script>
+(()=>{const $=id=>document.getElementById(id),get=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}},put=(k,v)=>localStorage.setItem(k,JSON.stringify(v)),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));let lang='vi',role='student',picked=0;const newId=()=>crypto.randomUUID?.()||String(Date.now())+'_'+Math.random().toString(36).slice(2);let snippets=get('mc2_codes',{vi:'hàm chao(ten):\n    in(f"Xin chào, {ten}!")\nchao("bạn")',py:'print("Hello, Python!")',js:'console.log("Chào từ JavaScript")',html:'<h1>Xin chào</h1><p>Sửa nội dung để xem trước.</p>'});const lessons=[['Làm quen lập trình','Máy tính làm theo chỉ dẫn; Python có cú pháp dễ đọc.','in("Xin chào, thế giới!")','print() làm gì?',['Hiển thị dữ liệu','Đọc tệp','Lặp mã'],0],['Biến và kiểu dữ liệu','Biến đặt tên cho số, chuỗi và giá trị đúng/sai.','ten = "An"\ntuoi = 16\nin(ten, tuoi)','ten = "An" thực hiện gì?',['Gán giá trị','So sánh','Kết thúc'],0],['Nhập và xuất','input() nhận văn bản; chuyển kiểu khi tính toán.','ten = nhập("Tên: ")\nin("Chào", ten)','input() mặc định trả kiểu gì?',['Số nguyên','Chuỗi','Đúng/sai'],1],['Toán tử','Toán tử số học tính; so sánh tạo đúng/sai.','tong = 7 + 3\nin(tong >= 10)','5 > 2 trả kiểu gì?',['Chuỗi','Số thực','Đúng/sai'],2],['Điều kiện','nếu/còn_nếu/ngược_lại chọn nhánh.','diem = 8\nnếu diem >= 5:\n    in("Đạt")','if giúp làm gì?',['Chọn nhánh','Lặp mãi','Tạo tệp'],0],['Vòng lặp','với duyệt dãy; khi lặp theo điều kiện.','tong = 0\nvới i trong phạm_vi(1, 6):\n    tong += i\nin(tong)','với thường để làm gì?',['Tạo lớp','Duyệt dãy','Đổi kiểu'],1],['Danh sách','List có thứ tự; dict lưu cặp khóa-giá trị.','ds = [2, 4, 6]\nin(tổng(ds))','Dict lưu dạng nào?',['Vị trí','Chuỗi','Khóa và giá trị'],2],['Hàm','Tham số đưa dữ liệu vào; trả_về gửi kết quả.','hàm binh_phuong(x):\n    trả_về x * x\nin(binh_phuong(5))','return dùng để làm gì?',['Trả kết quả','In kết quả','Lặp lại'],0],['Chuỗi và tệp','Chuỗi ghép, cắt, định dạng; tệp có chế độ đọc/ghi.','ten = "Mai"\nin(ten.chữ_hoa())','chữ_hoa() làm gì?',['Viết hoa','Sắp xếp','Đếm từ'],0],['Thuật toán','Chia bài toán thành bước nhỏ và xét trường hợp biên.','ds = [4, 1, 7, 2]\nin(sắp_xếp(ds))','Tìm kiếm nhị phân cần gì?',['Hai phần tử','Dữ liệu đã sắp xếp','Dữ liệu chữ'],1],['Đối tượng','Lớp mô tả đối tượng; thuộc tính lưu trạng thái.','class HocSinh:\n    def __init__(self, ten):\n        self.ten = ten','class có thể hiểu là gì?',['Vòng lặp','Số','Bản mô tả đối tượng'],2],['Dự án cuối','Kết hợp kiến thức làm máy tính, quiz hoặc trò chơi.','in("Bắt đầu từ phiên bản nhỏ")','Dự án nên làm gì?',['Giải việc cụ thể','Chỉ in chữ','Tránh hàm'],0]];const progress=()=>get('mc2_progress',[]);function note(s){$('toast').textContent=s;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2300)}function go(p){document.querySelectorAll('.page').forEach(v=>v.classList.toggle('active',v.id==='page-'+p));document.querySelectorAll('[data-go]').forEach(b=>b.classList.toggle('active',b.dataset.go===p));$('side').classList.remove('open');try{history.replaceState(null,'','#'+p)}catch{}if(p==='course')drawLessons();if(p==='classroom')drawClass();if(p==='projects')drawProjects();if(p==='profile')drawProfile();scrollTo(0,0)}function drawLessons(){const done=progress();$('modules').innerHTML=lessons.map((x,i)=>`<button class="module ${picked===i?'active':''}" data-lesson="${i}"><span class="code">${String(i+1).padStart(2,'0')}</span>　${esc(x[0])}　${done.includes(i)?'✓':''}</button>`).join('');$('progress-count').textContent=`${done.length} / 12`;$('home-progress').textContent=`${done.length} / 12 chặng hoàn thành`;document.querySelectorAll('[data-lesson]').forEach(b=>b.onclick=()=>lesson(+b.dataset.lesson))}function lesson(i){picked=i;const x=lessons[i];$('lesson').innerHTML=`<div class="eyebrow">CHẶNG ${String(i+1).padStart(2,'0')} / 12</div><h2>${esc(x[0])}</h2><p>${esc(x[1])}</p><h3>Ví dụ</h3><pre>${esc(x[2])}</pre><button class="ghost" id="try">Mở ví dụ trong IDE ↗</button><fieldset class="quiz"><legend>${esc(x[3])}</legend>${x[4].map((o,n)=>`<label><input name="answer" type="radio" value="${n}"> ${esc(o)}</label>`).join('')}</fieldset><button class="btn primary" id="finish">Kiểm tra & lưu</button><p id="lesson-msg" class="muted"></p>`;$('try').onclick=()=>{setLang('vi');$('editor').value=x[2];sync();go('ide')};$('finish').onclick=()=>{const a=document.querySelector('input[name="answer"]:checked');if(!a){$('lesson-msg').textContent='Chọn câu trả lời trước.';return}if(+a.value!==x[5]){$('lesson-msg').textContent='Chưa đúng. Xem lại nội dung rồi thử tiếp.';return}const p=progress();if(!p.includes(i))p.push(i);put('mc2_progress',p);drawLessons();lesson(i);note('Đã lưu tiến độ.')}}function setLang(next){snippets[lang]=$('editor').value;lang=next;$('lang').value=next;$('filename').textContent='main.'+({vi:'vi.py',py:'py',js:'js',html:'html'})[next];$('editor').value=snippets[next]||'';sync()}function sync(){snippets[lang]=$('editor').value;put('mc2_codes',snippets);$('gutter').textContent=Array.from({length:Math.max(1,$('editor').value.split('\n').length)},(_,i)=>i+1).join('\n')}function run(){const src=$('editor').value;$('preview').hidden=true;$('output').hidden=false;if(lang==='html'){$('preview').srcdoc=`<meta http-equiv="Content-Security-Policy" content="default-src 'none';style-src 'unsafe-inline';img-src data:">${src.replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi,'<!-- script đã bị chặn -->')}`;$('preview').hidden=false;$('output').hidden=true;return}if(lang==='js'){const body="let o='';const c={log:(...x)=>o+=x.join(' ')+'\\n'};self.fetch=undefined;self.XMLHttpRequest=undefined;try{new Function('console','prompt',"+JSON.stringify(src)+")(c,()=>null);postMessage(o||'Chạy xong.')}catch(e){postMessage(e.name+': '+e.message)}",url=URL.createObjectURL(new Blob([body],{type:'text/javascript'})),w=new Worker(url),timer=setTimeout(()=>{w.terminate();URL.revokeObjectURL(url);$('output').textContent='Đã dừng sau 2 giây.'},2000);w.onmessage=e=>{clearTimeout(timer);w.terminate();URL.revokeObjectURL(url);$('output').textContent=e.data};return}const r=runPy(src,lang==='vi',$('stdin').value,false);$('output').textContent=r.e?`Lỗi${r.e.l?' dòng '+r.e.l:''}: ${r.e.m}`:r.o||'Chương trình chạy xong.'}function challenge(){const src=$('editor').value,vi=/(^|\n)\s*(hàm|nếu|với|trả_về|in)\b/.test(src),pr=vi?'in':'print',r=runPy(src+`\n${pr}(so_chan_lon_nhat([1,3,4,8,5]))\n${pr}(so_chan_lon_nhat([1,3,5,7]))\n${pr}(so_chan_lon_nhat([100,2,45,88]))`,vi,'',false),expected=['8','-1','100'];if(r.e){$('tests').innerHTML=`<div class="test fail">Lỗi: ${esc(r.e.m)}</div>`;return}const a=r.o.trim().split(/\s+/);$('tests').innerHTML=expected.map((v,i)=>`<div class="test ${a[i]===v?'pass':'fail'}">${a[i]===v?'✓ Đạt':'× Chưa đạt'} · Ca ${i+1}: cần ${v}, nhận ${esc(a[i]||'trống')}</div>`).join('')}function classes(){return get('mc2_classes',[])}function drawClass(){const all=classes();if(role==='teacher'){$('class-content').innerHTML=`<div class="two"><section class="panel"><h3>Tạo lớp</h3><form id="create-class" class="form"><input name="name" placeholder="Tên lớp" required><textarea name="desc" placeholder="Mô tả"></textarea><button class="btn primary">Tạo lớp & mã mời</button></form></section><section class="panel"><h3>Lớp của tôi</h3>${all.map(c=>`<div class="class-card"><h3>${esc(c.name)}</h3><p>${esc(c.desc)}</p><span class="code">${esc(c.code)}</span><p>${c.members.length} học sinh · ${c.assignments.length} bài</p><button class="ghost" data-assign="${c.id}">＋ Bài tập</button>${c.assignments.map(a=>`<p>${esc(a.title)} · ${a.submissions.length} bài nộp</p>`).join('')}</div>`).join('')||'<p class="muted">Chưa có lớp.</p>'}</section></div>`;$('create-class').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target),c={id:newId(),name:f.get('name'),desc:f.get('desc'),code:Math.random().toString(36).slice(2,8).toUpperCase(),members:[],assignments:[]};all.push(c);put('mc2_classes',all);drawClass();note('Đã tạo lớp.')};document.querySelectorAll('[data-assign]').forEach(b=>b.onclick=()=>{const title=prompt('Tên bài tập');if(!title)return;all.find(c=>c.id===b.dataset.assign).assignments.push({id:newId(),title,submissions:[]});put('mc2_classes',all);drawClass()})}else{$('class-content').innerHTML=`<div class="two"><section class="panel"><h3>Tham gia bằng mã</h3><form id="join-class" class="form"><input name="code" maxlength="6" placeholder="Mã mời" required><button class="btn primary">Tham gia</button></form></section><section class="panel"><h3>Bài tập</h3>${all.flatMap(c=>c.assignments.map(a=>`<div class="class-card"><h3>${esc(a.title)}</h3><button class="ghost" data-task="${a.id}" data-class="${c.id}">Mở trong IDE</button></div>`)).join('')||'<p class="muted">Chưa có bài.</p>'}</section></div>`;$('join-class').onsubmit=e=>{e.preventDefault();const code=new FormData(e.target).get('code').toUpperCase(),c=all.find(x=>x.code===code);if(!c)return note('Không tìm thấy mã mời.');const name=get('mc2_name','Khách');if(!c.members.includes(name))c.members.push(name);put('mc2_classes',all);drawClass();note('Đã tham gia lớp.')};document.querySelectorAll('[data-task]').forEach(b=>b.onclick=()=>{const c=all.find(x=>x.id===b.dataset.class),a=c.assignments.find(x=>x.id===b.dataset.task);setLang('vi');$('editor').value='# '+a.title+'\n';sync();go('ide');let submit=$('submit-task');if(!submit){submit=document.createElement('button');submit.id='submit-task';submit.textContent='Nộp bài';$('actions').append(submit)}submit.onclick=()=>{a.submissions.push({student:get('mc2_name','Khách'),code:$('editor').value});put('mc2_classes',all);note('Đã lưu bài nộp cục bộ.')}})}}function drawProjects(){const list=get('mc2_projects',[]),q=$('search-project').value.toLowerCase();$('project-list').innerHTML=list.filter(p=>p.name.toLowerCase().includes(q)).map(p=>`<article class="project"><h3>${esc(p.name)}</h3><p>${esc(p.lang)} · trên thiết bị</p><button class="ghost" data-open="${p.id}">Mở</button><button class="ghost" data-export="${p.id}">Tải</button></article>`).join('')||'<div class="panel muted">Chưa có dự án. Tạo từ mã đang mở hoặc nhập tệp.</div>';document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>{const p=list.find(x=>x.id===b.dataset.open);setLang(p.lang);$('editor').value=p.code;sync();go('ide')});document.querySelectorAll('[data-export]').forEach(b=>b.onclick=()=>{const p=list.find(x=>x.id===b.dataset.export),a=document.createElement('a');a.href=URL.createObjectURL(new Blob([p.code]));a.download=p.name+'.'+({vi:'vi.py',py:'py',js:'js',html:'html'})[p.lang];a.click()})}function profile(){const n=get('mc2_name','Khách');$('rename').textContent=n+' · Đổi tên';$('profile-name').textContent=n;$('stat-lessons').textContent=progress().length;$('stat-projects').textContent=get('mc2_projects',[]).length;$('stat-submissions').textContent=classes().flatMap(c=>c.assignments).reduce((v,a)=>v+a.submissions.length,0)}function reply(q){q=q.toLowerCase();const src=$('editor').value;if(q.includes('lỗi')||q.includes('debug'))return 'Kiểm tra dấu hai chấm sau nếu/với/hàm, thụt lề, tên biến và kiểu dữ liệu. Chạy mã để xem dòng lỗi.';if(q.includes('gợi ý')||q.includes('hint'))return 'Thử một ví dụ nhỏ bằng tay. Xác định dữ liệu vào, kết quả mong muốn và trường hợp biên. Viết từng bước bằng lời trước khi chuyển sang mã.';if(q.includes('big-o')||q.includes('độ phức tạp'))return 'Một vòng lặp theo n thường O(n); hai vòng lặp lồng nhau thường O(n²). Đây là hướng dẫn chung, không phải phân tích tự động.';if(q.includes('giải thích')||q.includes('mã')||q.includes('code'))return src?`Đoạn mã có ${src.split('\n').length} dòng. Đọc từ trên xuống, theo dõi biến sau mỗi phép gán rồi xem kết quả được in hoặc trả về.\n\n${src}`:'Mở IDE và viết một đoạn ngắn để mình hướng dẫn cách đọc.';return 'Mình có hướng dẫn cục bộ về Python, lỗi thường gặp, gợi ý và Big-O. Không có mô hình AI trực tuyến trong bản này.'}function message(who,text,saveIt=true){const n=document.createElement('div');n.className='bubble '+who;n.textContent=text;$('messages').append(n);$('messages').scrollTop=$('messages').scrollHeight;if(saveIt){const h=get('mc2_chat',[]);h.push({who,text});put('mc2_chat',h.slice(-40))}}function send(text){if(!text.trim())return;message('user',text.trim());message('assistant',reply(text));$('chat-input').value=''}function init(){document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));$('theme').onclick=()=>{const t=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=t;put('mc2_theme',t)};document.documentElement.dataset.theme=get('mc2_theme','light');$('menu').onclick=()=>$('side').classList.toggle('open');$('lang').onchange=e=>setLang(e.target.value);$('editor').value=snippets.vi;sync();$('editor').oninput=sync;$('editor').onscroll=()=>$('gutter').scrollTop=$('editor').scrollTop;$('editor').onkeydown=e=>{if(e.key==='Tab'){e.preventDefault();e.target.setRangeText('    ',e.target.selectionStart,e.target.selectionEnd,'end');sync()}if(e.ctrlKey&&e.key==='Enter'){e.preventDefault();run()}};$('run').onclick=run;$('check').onclick=()=>{if(lang==='vi'||lang==='py'){const r=runPy($('editor').value,lang==='vi',$('stdin').value,true);$('output').textContent=r.e?'Lỗi: '+r.e.m:'Cú pháp hợp lệ.'}else $('output').textContent='Chưa hỗ trợ kiểm tra riêng ngôn ngữ này.'};$('save').onclick=()=>{sync();note('Đã lưu trên thiết bị.')};$('download').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([$('editor').value]));a.download=$('filename').textContent;a.click()};$('clear').onclick=()=>$('output').textContent='';$('challenge-open').onclick=()=>{setLang('vi');$('editor').value='hàm so_chan_lon_nhat(ds):\n    lon_nhat = -1\n    với so trong ds:\n        nếu so % 2 == 0 và so > lon_nhat:\n            lon_nhat = so\n    trả_về lon_nhat';sync();go('ide')};$('challenge-run').onclick=challenge;document.querySelectorAll('[data-role]').forEach(b=>b.onclick=()=>{role=b.dataset.role;drawClass()});$('new-project').onclick=()=>{const name=prompt('Tên dự án');if(!name)return;const list=get('mc2_projects',[]);list.unshift({id:newId(),name,lang,code:$('editor').value});put('mc2_projects',list);drawProjects();note('Đã lưu dự án.')};$('search-project').oninput=drawProjects;$('import').onclick=()=>$('file').click();$('file').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const list=get('mc2_projects',[]);list.unshift({id:newId(),name:f.name.replace(/\.[^.]+$/,''),lang:/\.html?$/i.test(f.name)?'html':/\.js$/i.test(f.name)?'js':'py',code:String(r.result)});put('mc2_projects',list);drawProjects()};r.readAsText(f)};$('profile-edit').onclick=$('rename').onclick=()=>{const n=prompt('Tên hiển thị',get('mc2_name',''));if(n?.trim())put('mc2_name',n.trim());profile()};$('chat-toggle').onclick=()=>{$('chat').classList.toggle('open');if(!$('messages').children.length){const h=get('mc2_chat',[]);(h.length?h:[{who:'assistant',text:'Chào bạn. Mình có thể hướng dẫn đọc lỗi, giải thích khái niệm và gợi ý bước tiếp theo. Mình không gửi mã ra ngoài.'}]).forEach(m=>message(m.who,m.text,false))}};$('chat-close').onclick=()=>$('chat').classList.remove('open');$('chat-form').onsubmit=e=>{e.preventDefault();send($('chat-input').value)};document.querySelectorAll('[data-prompt]').forEach(b=>b.onclick=()=>send(b.dataset.prompt));addEventListener('online',()=> $('net').textContent='● Kết nối sẵn sàng');addEventListener('offline',()=> $('net').textContent='● Đang ngoại tuyến');$('net').textContent=navigator.onLine?'● Kết nối sẵn sàng':'● Đang ngoại tuyến';drawLessons();profile();const p=location.hash.slice(1);if(document.getElementById('page-'+p))go(p);}init()})();
+</script>
+<script>
+(()=>{
+  const home=document.getElementById('page-home');
+  const existingGrid=home.querySelector('.grid');
+  existingGrid.insertAdjacentHTML('afterend', `
+    <section class="home-section audience-section" aria-labelledby="audience-title">
+      <div class="section-heading"><div><span class="eyebrow">DÀNH CHO NGƯỜI HỌC, NGƯỜI DẠY VÀ NGƯỜI TÒ MÒ</span><h2 id="audience-title">Được xây quanh người học thật.</h2></div><p>Khởi đầu từ nhu cầu ở trường học, nhưng đủ linh hoạt để đi xa hơn lớp học.</p></div>
+      <div class="audience-grid">
+        <article class="audience-card" data-reveal><span class="audience-number">01 / HỌC SINH</span><h3>Tự tin bắt đầu từ con số 0</h3><p>Bài học ngắn, ví dụ gần gũi, Python tiếng Việt để hiểu tư duy trước khi ghi nhớ cú pháp.</p><button data-go="course">Xem lộ trình <b>→</b></button></article>
+        <article class="audience-card" data-reveal><span class="audience-number">02 / GIÁO VIÊN</span><h3>Dạy bằng thực hành</h3><p>Giao bài, xem bài nộp và phản hồi. Bản hiện tại minh họa luồng lớp học trên cùng thiết bị.</p><button data-go="classroom">Mở lớp học <b>→</b></button></article>
+        <article class="audience-card" data-reveal><span class="audience-number">03 / NGƯỜI TỰ HỌC</span><h3>Thử một ý tưởng nhỏ</h3><p>Viết mã, chạy thử, lưu dự án và học từ những lỗi thường gặp theo nhịp của riêng bạn.</p><button data-go="ide">Mở workbench <b>→</b></button></article>
+      </div>
+    </section>
+    <section class="home-section craft-section" data-reveal>
+      <div class="craft-copy"><span class="eyebrow">NGUYÊN TẮC KỸ THUẬT</span><h2>Mang trải nghiệm cho mọi người dùng</h2><p>MultiCode được định hướng như một xưởng học tập: giao diện gọn, nội dung rõ và người học luôn biết điều gì đang chạy trên thiết bị của mình.</p></div>
+      <div class="craft-points"><article><span>01</span><div><h3>Học được cả khi mạng chập chờn</h3><p>Bài học, IDE và dữ liệu demo ưu tiên hoạt động tại chỗ.</p></div></article><article><span>02</span><div><h3>Tiến bộ có thể kiểm chứng</h3><p>Câu trả lời, bài test và tiến độ dựa trên thao tác thực, không dựng số liệu thành tích.</p></div></article><article><span>03</span><div><h3>Giới hạn được nói rõ</h3><p>Chạy cục bộ, trợ giúp soạn sẵn và các tính năng cần máy chủ được phân biệt minh bạch.</p></div></article></div>
+    </section>
+    <section class="home-section roadmap-section" aria-labelledby="roadmap-title">
+      <div class="section-heading"><div><span class="eyebrow">TẦM NHÌN PHÁT TRIỂN</span><h2 id="roadmap-title">Từ lớp học địa phương đến cộng đồng quốc tế.</h2></div><span class="roadmap-label">ĐỊNH HƯỚNG TƯƠNG LAI · CHƯA PHẢI TÍNH NĂNG ĐÃ PHÁT HÀNH</span></div>
+      <div class="roadmap-track"><article data-reveal><span class="roadmap-step">HIỆN TẠI</span><h3>Nền móng dễ tiếp cận</h3><p>Python căn bản, giao diện tiếng Việt, công cụ cục bộ và trải nghiệm phù hợp người mới.</p></article><article data-reveal><span class="roadmap-step">BƯỚC TIẾP</span><h3>Mở rộng cho trường học</h3><p>Đồng bộ lớp học an toàn, tài liệu song ngữ, khả năng tiếp cận tốt hơn và công cụ cho giáo viên.</p></article><article data-reveal><span class="roadmap-step">TẦM NHÌN</span><h3>Một không gian mở cho người học code</h3><p>Nhiều ngôn ngữ, nội dung được bản địa hóa và cộng đồng chia sẻ dự án xuyên biên giới — phát triển theo tiêu chuẩn an toàn và quyền riêng tư.</p></article></div>
+      <div class="vision-note"><span class="vision-mark">m.</span><p><strong>Tham vọng lớn bắt đầu từ một trải nghiệm học đáng tin.</strong><br>Trước khi mở rộng quốc tế, nền tảng cần hoàn thiện chất lượng bài học, bảo mật, hạ tầng và sự đồng hành của giáo viên.</p></div>
+    </section>
+    <section class="home-cta" data-reveal><div><span class="eyebrow">BƯỚC ĐẦU TIÊN</span><h2>Chọn một bài học. Viết dòng mã đầu tiên.</h2><p>Không cần tài khoản để bắt đầu khám phá.</p></div><button class="btn primary" data-go="course">Bắt đầu học <span>→</span></button></section>
+  `);
+  const style=document.createElement('style');
+  style.textContent=`
+    :root{font-family:"Be Vietnam Pro","Noto Sans","Segoe UI",Tahoma,Arial,sans-serif;font-synthesis:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    body{font-size:14px;line-height:1.65;letter-spacing:.005em}button,input,textarea,select{font-family:inherit}h1,h2,h3,p{overflow-wrap:anywhere}.hero h1{letter-spacing:-.045em;line-height:1.04;font-size:clamp(2.8rem,6vw,5.2rem)}.hero p{font-size:clamp(.95rem,1.3vw,1.08rem);max-width:34rem}.eyebrow{letter-spacing:.13em;font-size:.68rem}.nav button,.btn,.tile,.right button{font-size:.78rem}.main{max-width:1380px;padding-top:clamp(28px,4vw,58px);padding-bottom:70px}.hero{min-height:440px;padding:35px 0 54px;gap:clamp(28px,6vw,86px)}
+    .home-section{margin-top:clamp(58px,8vw,100px)}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:20px}.section-heading h2,.craft-copy h2,.home-cta h2{max-width:660px;margin:7px 0 0;font-size:clamp(1.55rem,3vw,2.35rem);letter-spacing:-.035em;line-height:1.16}.section-heading>p{max-width:360px;margin:0;color:var(--muted);font-size:.85rem}.audience-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.audience-card{position:relative;min-height:230px;padding:23px;border:1px solid var(--line);border-radius:7px;background:var(--card);transition:transform .24s,border-color .24s,box-shadow .24s}.audience-card:hover{transform:translateY(-4px);border-color:#9caf9f;box-shadow:0 18px 36px #24312712}.audience-number,.roadmap-step{color:var(--rust);font-size:.68rem;font-weight:800;letter-spacing:.09em}.audience-card h3{margin:28px 0 7px;font-size:1.12rem;letter-spacing:-.025em}.audience-card p,.craft-copy p,.craft-points p,.roadmap-track p,.vision-note p,.home-cta p{color:var(--muted);font-size:.83rem;line-height:1.75}.audience-card button{position:absolute;bottom:17px;left:23px;border:0;background:none;color:var(--green);font-size:.76rem;font-weight:750}.audience-card button b{margin-left:7px}.craft-section{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(35px,7vw,100px);padding:clamp(24px,4vw,48px);border:1px solid var(--line);border-radius:8px;background:var(--soft)}.craft-copy h2{font-family:Georgia,"Times New Roman",serif;font-weight:400}.craft-copy p{max-width:440px;margin-top:15px}.craft-points{display:grid;gap:8px}.craft-points article{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.craft-points article:last-child{border-bottom:0}.craft-points article>span{color:var(--rust);font: .75rem ui-monospace,monospace}.craft-points h3,.roadmap-track h3{margin:0;font-size:.95rem}.craft-points p{margin:3px 0 0}.roadmap-label{color:var(--muted);font-size:.64rem;letter-spacing:.06em;text-align:right}.roadmap-track{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.roadmap-track:before{content:"";position:absolute;top:8px;left:9%;right:9%;height:1px;background:var(--line-strong,var(--line))}.roadmap-track article{position:relative;padding:27px 20px 20px;border:1px solid var(--line);border-radius:6px;background:var(--card)}.roadmap-track article:before{content:"";position:absolute;top:-24px;left:20px;width:9px;height:9px;border:2px solid var(--green);border-radius:50%;background:var(--bg)}.roadmap-track h3{margin:11px 0 5px}.roadmap-track p{margin:0}.vision-note{display:flex;align-items:center;gap:14px;margin-top:14px;padding:16px 19px;border-left:3px solid var(--green);background:var(--gs)}.vision-mark{font-weight:900;font-size:1.6rem;color:var(--green)}.vision-note p{margin:0}.vision-note strong{color:var(--ink)}.home-cta{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:70px;padding:25px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.home-cta h2{font-size:clamp(1.35rem,2.3vw,1.8rem)}.home-cta p{margin:6px 0 0}.sample{--split:0;perspective:1000px;transform-style:preserve-3d;transition:box-shadow .25s}.sample header,.sample pre,.sample footer{will-change:transform;transition:transform .16s linear}.sample header{transform:translate3d(calc(var(--split)*-10px),calc(var(--split)*-15px),calc(var(--split)*22px)) rotateX(calc(var(--split)*4deg))}.sample pre{transform:translate3d(calc(var(--split)*14px),calc(var(--split)*6px),calc(var(--split)*-18px)) rotateY(calc(var(--split)*-2deg))}.sample footer{transform:translate3d(calc(var(--split)*-8px),calc(var(--split)*24px),calc(var(--split)*17px)) rotateX(calc(var(--split)*-4deg))}
+    [data-reveal],.motion-ready{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.2,1)}[data-reveal].is-visible,.motion-ready.is-visible{opacity:1;transform:translateY(0)}.tile,.panel,.module,.class-card,.project,.test{transition:transform .2s,border-color .2s,background-color .2s,box-shadow .2s}.tile:hover,.module:hover,.project:hover{transform:translateY(-2px)}.lesson{animation:lesson-enter .3s ease both}@keyframes lesson-enter{from{opacity:.45;transform:translateY(8px)}to{opacity:1;transform:none}}.page.active{animation:page-enter .32s cubic-bezier(.2,.7,.2,1) both}@keyframes page-enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.chat{transform:translateY(10px);opacity:0;transition:opacity .2s,transform .2s}.chat.open{transform:translateY(0);opacity:1}.chat-button{transition:transform .2s,box-shadow .2s}.chat-button:hover{transform:translateY(-2px);box-shadow:0 14px 34px #14201730}
+    [data-theme=dark] .craft-section{background:#202722}[data-theme=dark] .roadmap-track:before{background:var(--line)}[data-theme=dark] .vision-note{background:#29392e}[data-theme=dark] .sample{box-shadow:0 20px 55px #0003}
+    @media(max-width:850px){.main{padding-top:24px}.hero{min-height:0;padding:22px 0 38px}.audience-grid,.roadmap-track{grid-template-columns:1fr}.audience-card{min-height:195px}.roadmap-track:before{top:10px;bottom:10px;left:7px;width:1px;height:auto}.roadmap-track article{margin-left:16px}.roadmap-track article:before{left:-22px;top:20px}.section-heading{align-items:flex-start;flex-direction:column}.roadmap-label{text-align:left}.craft-section{grid-template-columns:1fr}.home-cta{align-items:flex-start;flex-direction:column}.sample header,.sample pre,.sample footer{transform:translateY(calc(var(--split)*4px))}}
+    @media(max-width:520px){.top{padding:0 11px}.brand{font-size:14px}.right{gap:4px}.right .status{display:none}.right button{padding:7px 8px;font-size:.68rem}#rename{max-width:105px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.hero h1{font-size:clamp(2.45rem,12vw,3.4rem);letter-spacing:-.04em}.sample{transform:none}.home-section{margin-top:48px}.audience-card{padding:18px}.audience-card button{left:18px}.roadmap-track article{padding-right:14px}.vision-note{align-items:flex-start}.chat-button{right:12px;bottom:12px}.chat{right:12px;bottom:58px;height:min(500px,calc(100vh - 80px))}}
+    @media(prefers-reduced-motion:reduce){[data-reveal],.motion-ready{opacity:1;transform:none;transition:none}.sample header,.sample pre,.sample footer{transform:none!important;transition:none!important}.page.active,.lesson{animation:none}}
+  `;style.textContent+=' #menu{display:none}@media(max-width:850px){#menu{display:inline-flex}}';document.head.append(style);document.getElementById('menu').setAttribute('aria-label','Mở điều hướng');
+  const links=home.querySelectorAll('.audience-card [data-go],.home-cta [data-go]');links.forEach(b=>b.addEventListener('click',()=>{const target=b.dataset.go;document.querySelector(`#side [data-go="${target}"]`)?.click();setTimeout(()=>document.querySelectorAll(`#page-${target} [data-reveal]:not(.is-visible)`).forEach(el=>reveal.observe(el)),50)}));
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;const reveal=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');reveal.unobserve(entry.target)}}),{threshold:.12,rootMargin:'0px 0px -35px 0px'});
+  const watch=()=>{document.querySelectorAll('.page.active [data-reveal]:not(.is-visible)').forEach(el=>reveal.observe(el));document.querySelectorAll('.page.active .tile:not(.motion-ready),.page.active .panel:not(.motion-ready),.page.active .module:not(.motion-ready),.page.active .class-card:not(.motion-ready),.page.active .project:not(.motion-ready),.page.active .test:not(.motion-ready)').forEach(el=>{el.classList.add('motion-ready');reveal.observe(el)})};watch();
+  const mutation=new MutationObserver(watch);mutation.observe(document.querySelector('main'),{subtree:true,attributes:true,attributeFilter:['class']});
+  document.getElementById('chat-input').addEventListener('keydown',event=>{if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();document.getElementById('chat-form').requestSubmit()}});document.addEventListener('keydown',event=>{if(event.key==='Escape'){document.getElementById('chat').classList.remove('open');document.getElementById('side').classList.remove('open')}});
+  let frame=false;addEventListener('scroll',()=>{if(frame||reduced)return;frame=true;requestAnimationFrame(()=>{frame=false;const card=home.querySelector('.sample');const rect=card.getBoundingClientRect();const split=Math.max(0,Math.min(1,(innerHeight*.78-rect.top)/(innerHeight*.72)));card.style.setProperty('--split',String(split))})},{passive:true});
+  if(reduced)document.querySelectorAll('[data-reveal]').forEach(el=>el.classList.add('is-visible'));
+})();
+</script><script>
+(()=>{
+  const $=id=>document.getElementById(id);
+  const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key))??fallback}catch{return fallback}};
+  const write=(key,value)=>{try{localStorage.setItem(key,JSON.stringify(value));return true}catch{return false}};
+  const safe=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  const accounts=()=>read('mc3_accounts',[]),saveAccounts=list=>write('mc3_accounts',list);
+  const classes=()=>read('mc3_classes',[]),saveClasses=list=>write('mc3_classes',list);
+  const newId=()=>crypto.randomUUID?.()||`${Date.now()}_${Math.random().toString(36).slice(2)}`;
+  let active=accounts().find(item=>item.id===read('mc3_session',null))||null;
+  let authMode='login',pendingTask=null;
+  const guestData=()=>read('mc3_guest_snapshot',{progress:read('mc2_progress',[]),projects:read('mc2_projects',[]),codes:read('mc2_codes',{}),name:read('mc2_name','')});
+  function snapshot(){const data={progress:read('mc2_progress',[]),projects:read('mc2_projects',[]),codes:read('mc2_codes',{}),name:read('mc2_name','')};if(active){const list=accounts(),item=list.find(account=>account.id===active.id);if(item){item.data=data;saveAccounts(list)}}else write('mc3_guest_snapshot',data)}
+  function restore(item){const data=item?.data||guestData();write('mc2_progress',data.progress||[]);write('mc2_projects',data.projects||[]);write('mc2_codes',data.codes||{});write('mc2_name',item?.name||data.name||'')}
+  const dlg=document.createElement('dialog');dlg.id='account-dialog-v3';dlg.innerHTML=`<form method="dialog" class="auth-close"><button aria-label="Đóng cửa sổ">×</button></form><span class="eyebrow">MULTICODE · HỒ SƠ TRÊN THIẾT BỊ</span><h2 id="auth-title-v3">Đăng nhập</h2><p class="auth-note-v3">Bản demo lưu dữ liệu trong trình duyệt này. Không nhập mật khẩu bạn đang dùng ở nơi khác.</p><div class="auth-tabs-v3"><button type="button" data-auth-v3="login">Đăng nhập</button><button type="button" data-auth-v3="register">Tạo tài khoản</button><button type="button" data-auth-v3="guest">Dùng khách</button></div><form id="account-form-v3" class="auth-fields-v3"><label id="auth-name-wrap-v3">Họ và tên<input id="auth-name-v3" maxlength="60" autocomplete="name" required></label><label id="auth-user-wrap-v3">Tên đăng nhập<input id="auth-user-v3" maxlength="24" autocomplete="username" placeholder="minh_anh" required></label><label id="auth-email-wrap-v3">Email hoặc tên đăng nhập<input id="auth-email-v3" autocomplete="username" placeholder="ban@example.com" required></label><label id="auth-role-wrap-v3">Vai trò<select id="auth-role-v3"><option value="student">Học sinh</option><option value="teacher">Giáo viên</option></select></label><label id="auth-pass-wrap-v3">Mật khẩu<input id="auth-pass-v3" type="password" minlength="10" maxlength="128" autocomplete="current-password" required></label><button type="button" id="auth-toggle-v3" class="auth-toggle-v3">Hiện mật khẩu</button><label id="auth-confirm-wrap-v3">Xác nhận mật khẩu<input id="auth-confirm-v3" type="password" minlength="10" maxlength="128" autocomplete="new-password" required></label><p id="auth-error-v3" role="status" aria-live="polite"></p><button class="btn primary" id="auth-submit-v3">Đăng nhập</button></form><button id="auth-logout-v3" class="auth-logout-v3">Đăng xuất tài khoản hiện tại</button>`;document.body.append(dlg);
+  function toast(text){const el=$('toast');if(!el)return;el.textContent=text;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2500)}
+  function setMode(mode){authMode=mode;dlg.dataset.mode=mode;$('auth-title-v3').textContent=({login:'Đăng nhập tài khoản',register:'Tạo tài khoản cá nhân',guest:'Tiếp tục với tư cách khách'})[mode];dlg.querySelectorAll('[data-auth-v3]').forEach(button=>button.classList.toggle('active',button.dataset.authV3===mode));$('auth-name-wrap-v3').hidden=mode!=='register';$('auth-user-wrap-v3').hidden=mode!=='register';$('auth-email-wrap-v3').hidden=mode==='guest';$('auth-role-wrap-v3').hidden=mode!=='register';$('auth-confirm-wrap-v3').hidden=mode!=='register';$('auth-name-v3').required=mode==='register';$('auth-user-v3').required=mode==='register';$('auth-email-v3').required=mode!=='guest';$('auth-pass-v3').required=mode!=='guest';$('auth-confirm-v3').required=mode==='register';$('auth-toggle-v3').hidden=mode==='guest';$('auth-pass-wrap-v3').hidden=mode==='guest';$('auth-pass-v3').type='password';$('auth-confirm-v3').type='password';$('auth-toggle-v3').textContent='Hiện mật khẩu';$('auth-error-v3').textContent='';$('auth-logout-v3').hidden=!active;$('auth-submit-v3').textContent=({login:'Đăng nhập',register:'Tạo tài khoản',guest:'Tiếp tục với tư cách khách'})[mode]}
+  function openAuth(mode='login'){setMode(mode);if(!dlg.open)dlg.showModal()}
+  function initials(name){return String(name||'K').trim().split(/\s+/).map(part=>part[0]||'').slice(-2).join('').toLocaleUpperCase('vi')}
+  function updateAccountUI(){const name=active?.name||read('mc2_name','Khách')||'Khách';const rename=$('rename');if(rename){rename.textContent=active?`${name} · Hồ sơ`:'Đăng nhập / Tạo hồ sơ';rename.title=active?`${active.username} · ${active.role==='teacher'?'Giáo viên':'Học sinh'}`:'Tài khoản cục bộ'}if($('profile-name'))$('profile-name').textContent=name;if($('account-status-v3'))$('account-status-v3').innerHTML=active?`<div class="account-summary-v3"><span class="account-avatar-v3">${safe(initials(name))}</span><div><b>${safe(name)}</b><small>@${safe(active.username)} · ${active.role==='teacher'?'Giáo viên':'Học sinh'}</small></div><span class="local-tag-v3">TRÊN THIẾT BỊ</span></div>`:`<div class="account-summary-v3"><span class="account-avatar-v3">K</span><div><b>Đang dùng với tư cách khách</b><small>Tạo tài khoản để lưu tiến độ và tham gia lớp học trên thiết bị này.</small></div></div>`;if($('profile-edit'))$('profile-edit').textContent=active?'Quản lý tài khoản':'Đăng nhập / Tạo tài khoản'}
+  async function hashPassword(password,salt){const key=await crypto.subtle.importKey('raw',new TextEncoder().encode(password),'PBKDF2',false,['deriveBits']);const bits=await crypto.subtle.deriveBits({name:'PBKDF2',salt:new TextEncoder().encode(salt),iterations:180000,hash:'SHA-256'},key,256);return [...new Uint8Array(bits)].map(byte=>byte.toString(16).padStart(2,'0')).join('')}
+  function currentPage(){return document.querySelector('.page.active')?.id.replace('page-','')||'home'}
+  function refreshCurrent(){const page=currentPage();document.querySelector(`#side [data-go="${page}"]`)?.click();if(page==='classroom')renderClassroom();if(page==='profile')renderProfileManager()}
+  function setActive(account){snapshot();active=account||null;restore(active);write('mc3_session',active?.id||null);updateAccountUI();refreshCurrent()}
+  async function submitAuth(event){event.preventDefault();const error=$('auth-error-v3');error.textContent='';if(authMode==='guest'){setActive(null);dlg.close();toast('Đang tiếp tục với tư cách khách.');return}if(!crypto.subtle){error.textContent='Trình duyệt này chưa hỗ trợ mã hóa mật khẩu. Hãy mở bằng trình duyệt mới qua localhost hoặc HTTPS.';return}const identity=$('auth-email-v3').value.trim().toLowerCase(),password=$('auth-pass-v3').value,list=accounts();try{if(authMode==='register'){const name=$('auth-name-v3').value.trim(),username=$('auth-user-v3').value.trim().toLowerCase(),email=identity;if(name.length<2){error.textContent='Họ tên cần ít nhất 2 ký tự.';return}if(!/^[a-z0-9_]{3,24}$/.test(username)){error.textContent='Tên đăng nhập cần 3–24 ký tự chữ thường, số hoặc dấu gạch dưới.';return}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){error.textContent='Nhập địa chỉ email hợp lệ.';return}if(password.length<10){error.textContent='Mật khẩu cần ít nhất 10 ký tự.';return}if(password!==$('auth-confirm-v3').value){error.textContent='Hai lần nhập mật khẩu chưa trùng khớp.';return}if(list.some(item=>item.email===email||item.username===username)){error.textContent='Email hoặc tên đăng nhập này đã được sử dụng.';return}const salt=[...crypto.getRandomValues(new Uint8Array(16))].map(byte=>byte.toString(16).padStart(2,'0')).join('');const account={id:newId(),name,username,email,role:$('auth-role-v3').value,salt,passwordHash:await hashPassword(password,salt),createdAt:new Date().toISOString(),data:{progress:[],projects:[],codes:{},name}};list.push(account);if(!saveAccounts(list)){error.textContent='Không đủ dung lượng lưu trên thiết bị.';return}setActive(account)}else{const account=list.find(item=>item.email===identity||item.username===identity);if(!account||await hashPassword(password,account.salt)!==account.passwordHash){error.textContent='Email/tên đăng nhập hoặc mật khẩu chưa đúng.';return}setActive(account)}$('auth-pass-v3').value='';$('auth-confirm-v3').value='';dlg.close();toast('Đã đăng nhập. Hồ sơ được lưu cục bộ trên trình duyệt này.')}catch{error.textContent='Không thể hoàn tất thao tác. Vui lòng thử lại.'}}
+  function installProfileManager(){const head=$('page-profile')?.querySelector('.head');if(!head)return;const panel=document.createElement('section');panel.className='account-manager-v3 panel';panel.innerHTML=`<span class="eyebrow">TÀI KHOẢN CÁ NHÂN</span><h2>Hồ sơ và cài đặt</h2><div id="account-status-v3"></div><div class="account-actions-v3"><button id="account-open-v3" class="btn primary">Đăng nhập / Tạo tài khoản</button><button id="account-save-v3" class="ghost">Lưu thay đổi</button></div><div class="account-fields-v3"><label>Họ và tên<input id="edit-name-v3" maxlength="60"></label><label>Tên đăng nhập<input id="edit-user-v3" maxlength="24"></label><label>Email<input id="edit-email-v3" type="email"></label><label>Mật khẩu mới<input id="edit-pass-v3" type="password" minlength="10" maxlength="128" placeholder="Để trống nếu không đổi"></label><label>Xác nhận mật khẩu mới<input id="edit-confirm-v3" type="password" minlength="10" maxlength="128" placeholder="Nhập lại nếu đổi mật khẩu"></label></div><p class="auth-note-v3">Tài khoản demo chỉ tồn tại trong trình duyệt và không đồng bộ giữa thiết bị. Mật khẩu được băm cục bộ, nhưng đây không phải hệ thống đăng nhập máy chủ.</p>`;head.after(panel);$('account-open-v3').onclick=()=>openAuth(active?'login':'register');$('account-save-v3').onclick=saveProfile;$('profile-edit').onclick=()=>openAuth(active?'login':'register');$('rename').onclick=()=>openAuth(active?'login':'register');renderProfileManager()}
+  function renderProfileManager(){updateAccountUI();if(!$('account-open-v3'))return;$('account-open-v3').textContent=active?'Chuyển / thêm tài khoản':'Đăng nhập / Tạo tài khoản';$('edit-name-v3').value=active?.name||'';$('edit-user-v3').value=active?.username||'';$('edit-email-v3').value=active?.email||'';$('edit-pass-v3').value='';$('edit-confirm-v3').value=''}
+  async function saveProfile(){if(!active){openAuth('register');return}const name=$('edit-name-v3').value.trim(),username=$('edit-user-v3').value.trim().toLowerCase(),email=$('edit-email-v3').value.trim().toLowerCase(),password=$('edit-pass-v3').value,confirm=$('edit-confirm-v3').value;if(name.length<2||!/^[a-z0-9_]{3,24}$/.test(username)||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){toast('Kiểm tra lại họ tên, tên đăng nhập và email.');return}if(password&&password!==confirm){toast('Hai lần nhập mật khẩu mới chưa trùng khớp.');return}const list=accounts();if(list.some(item=>item.id!==active.id&&(item.email===email||item.username===username))){toast('Email hoặc tên đăng nhập đã được sử dụng.');return}const item=list.find(account=>account.id===active.id);item.name=name;item.username=username;item.email=email;if(password){if(password.length<10){toast('Mật khẩu mới cần ít nhất 10 ký tự.');return}item.salt=[...crypto.getRandomValues(new Uint8Array(16))].map(byte=>byte.toString(16).padStart(2,'0')).join('');item.passwordHash=await hashPassword(password,item.salt)}saveAccounts(list);active=item;write('mc2_name',name);$('edit-pass-v3').value='';$('edit-confirm-v3').value='';updateAccountUI();toast('Đã lưu hồ sơ.')}
+  const classId=()=>newId();
+  function inviteCode(list){let code;const chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';do{code=Array.from({length:6},()=>chars[Math.floor(Math.random()*chars.length)]).join('')}while(list.some(item=>item.code===code));return code}
+  function renderClassroom(){const host=$('class-content');if(!host)return;if(!active){host.innerHTML=`<section class="panel class-gate-v3"><h2>Lớp học gắn với hồ sơ</h2><p>Đăng nhập bằng tài khoản demo để tạo lớp hoặc tham gia bằng mã mời. Dữ liệu này chỉ đồng bộ trong trình duyệt hiện tại.</p><button id="class-register-v3" class="btn primary">Tạo tài khoản</button> <button id="class-login-v3" class="ghost">Đăng nhập</button></section>`;$('class-register-v3').onclick=()=>openAuth('register');$('class-login-v3').onclick=()=>openAuth('login');return}const all=classes();if(active.role==='teacher'){const own=all.filter(item=>item.teacherId===active.id);host.innerHTML=`<div class="class-columns-v3"><section class="panel"><span class="eyebrow">GIÁO VIÊN</span><h2>Tạo lớp học</h2><form id="class-create-v3" class="class-form-v3"><label>Tên lớp<input name="name" maxlength="70" placeholder="Python căn bản · 10A" required></label><label>Mô tả<textarea name="description" rows="3" placeholder="Mục tiêu của lớp"></textarea></label><button class="btn primary">Tạo lớp và mã mời</button></form></section><section class="panel"><span class="eyebrow">LỚP CỦA BẠN</span><h2>${own.length} lớp</h2><div>${own.map(classCard).join('')||'<p class="muted">Chưa có lớp. Tạo lớp để nhận học sinh.</p>'}</div></section></div><section class="panel class-submissions-v3"><span class="eyebrow">BÀI NỘP</span><h2>Bài tập cần xem</h2><div>${own.flatMap(room=>room.assignments.flatMap(task=>task.submissions.map(sub=>submissionCard(room,task,sub)))).join('')||'<p class="muted">Bài nộp của học sinh sẽ hiển thị tại đây.</p>'}</div></section>`;$('class-create-v3').onsubmit=event=>{event.preventDefault();const data=new FormData(event.currentTarget),rooms=classes(),room={id:classId(),name:String(data.get('name')).trim(),description:String(data.get('description')).trim(),code:inviteCode(rooms),teacherId:active.id,teacherName:active.name,members:[],assignments:[],createdAt:new Date().toISOString()};rooms.unshift(room);saveClasses(rooms);renderClassroom();toast(`Đã tạo lớp ${room.name}. Mã mời: ${room.code}`)};host.querySelectorAll('[data-class-edit]').forEach(button=>button.onclick=()=>editClass(button.dataset.classEdit));host.querySelectorAll('[data-class-copy]').forEach(button=>button.onclick=async()=>{try{await navigator.clipboard.writeText(button.dataset.classCopy);toast('Đã sao chép mã mời.')}catch{toast(`Mã mời: ${button.dataset.classCopy}`)}});host.querySelectorAll('[data-assignment-form]').forEach(form=>form.onsubmit=event=>{event.preventDefault();const data=new FormData(form),rooms=classes(),room=rooms.find(item=>item.id===form.dataset.assignmentForm);if(!room)return;room.assignments.unshift({id:classId(),title:String(data.get('title')).trim(),description:String(data.get('description')).trim(),deadline:String(data.get('deadline')||''),submissions:[]});saveClasses(rooms);renderClassroom();toast('Đã tạo bài tập cho lớp.')});host.querySelectorAll('[data-feedback]').forEach(button=>button.onclick=()=>giveFeedback(button.dataset.class,button.dataset.task,button.dataset.student));return}const joined=all.filter(room=>room.members.some(member=>member.id===active.id));const tasks=joined.flatMap(room=>room.assignments.map(task=>({room,task})));host.innerHTML=`<div class="class-columns-v3"><section class="panel"><span class="eyebrow">HỌC SINH</span><h2>Tham gia lớp</h2><form id="class-join-v3" class="class-form-v3"><label>Mã mời của giáo viên<input name="code" maxlength="6" autocomplete="off" placeholder="VD: A3K9PX" required></label><button class="btn primary">Tham gia lớp</button></form><div class="my-classes-v3"><h3>Lớp đã tham gia · ${joined.length}</h3>${joined.map(room=>`<article class="class-card-v3"><b>${safe(room.name)}</b><small>${safe(room.teacherName)} · ${room.members.length} học sinh</small><p>${safe(room.description||'')}</p></article>`).join('')||'<p class="muted">Nhập mã mời để xem lớp và bài tập.</p>'}</div></section><section class="panel"><span class="eyebrow">BÀI TẬP</span><h2>${tasks.length} bài được giao</h2><div>${tasks.map(item=>taskCard(item.room,item.task)).join('')||'<p class="muted">Bài tập từ giáo viên sẽ xuất hiện tại đây.</p>'}</div></section></div>`;$('class-join-v3').onsubmit=event=>{event.preventDefault();const code=new FormData(event.currentTarget).get('code').trim().toUpperCase(),rooms=classes(),room=rooms.find(item=>item.code===code);if(!room){toast('Không tìm thấy mã lớp. Hãy kiểm tra lại với giáo viên.');return}if(room.teacherId===active.id){toast('Tài khoản giáo viên không thể tham gia lớp của chính mình.');return}if(!room.members.some(member=>member.id===active.id))room.members.push({id:active.id,name:active.name,joinedAt:new Date().toISOString()});saveClasses(rooms);renderClassroom();toast(`Đã tham gia lớp ${room.name}.`)};host.querySelectorAll('[data-open-task]').forEach(button=>button.onclick=()=>openTask(button.dataset.class,button.dataset.openTask))}
+  function classCard(room){return `<article class="class-card-v3"><div class="class-card-top-v3"><div><b>${safe(room.name)}</b><small>${safe(room.description||'Chưa có mô tả')}</small></div><code>${safe(room.code)}</code></div><div class="class-meta-v3">${room.members.length} học sinh · ${room.assignments.length} bài tập</div><div class="class-actions-v3"><button class="ghost" data-class-copy="${safe(room.code)}">Sao chép mã</button><button class="ghost" data-class-edit="${safe(room.id)}">Sửa thông tin</button></div><details class="assignment-create-v3"><summary>＋ Tạo bài tập</summary><form class="class-form-v3" data-assignment-form="${safe(room.id)}"><label>Tên bài tập<input name="title" maxlength="100" required placeholder="Ví dụ: Tính tổng danh sách"></label><label>Hướng dẫn<textarea name="description" rows="2"></textarea></label><label>Hạn nộp<input type="date" name="deadline"></label><button class="btn primary">Giao bài</button></form></details><p class="class-members-v3">${room.members.length?room.members.map(member=>safe(member.name)).join(' · '):'Chưa có học sinh tham gia'}</p>${room.assignments.map(task=>`<div class="class-task-line-v3">${safe(task.title)} · ${task.submissions.length} bài nộp</div>`).join('')}</article>`}
+  function editClass(roomId){const rooms=classes(),room=rooms.find(item=>item.id===roomId);if(!room)return;const name=prompt('Tên lớp',room.name);if(name===null||!name.trim())return;const description=prompt('Mô tả lớp',room.description||'');if(description===null)return;room.name=name.trim();room.description=description.trim();saveClasses(rooms);renderClassroom()}
+  function taskCard(room,task){const submitted=task.submissions.find(item=>item.studentId===active.id);return `<article class="class-task-card-v3"><div class="class-card-top-v3"><b>${safe(task.title)}</b><span class="task-status-v3">${submitted?'Đã nộp':'Chưa nộp'}</span></div><p>${safe(task.description||'Không có hướng dẫn bổ sung')}</p><small>${safe(room.name)} · Hạn ${safe(task.deadline||'chưa đặt')}</small>${submitted?.feedback?`<p class="teacher-feedback-v3">Phản hồi: ${safe(submitted.feedback)}</p>`:''}<button class="ghost" data-open-task="${safe(task.id)}" data-class="${safe(room.id)}">Mở bài trong IDE →</button></article>`}
+  function openTask(roomId,taskId){pendingTask={roomId,taskId};const room=classes().find(item=>item.id===roomId),task=room?.assignments.find(item=>item.id===taskId);if(!task)return;document.querySelector('#side [data-go="ide"]')?.click();$('editor').value=`# ${task.title}\n# ${task.description||'Viết lời giải bên dưới'}\n\n`;$('editor').dispatchEvent(new Event('input'));let button=$('submit-assignment-v3');if(!button){button=document.createElement('button');button.id='submit-assignment-v3';button.type='button';button.className='tool-button';button.textContent='Nộp bài cho lớp';$('actions').prepend(button)}button.hidden=false;button.onclick=submitTask}
+  function submitTask(){if(!pendingTask||!active)return;const rooms=classes(),room=rooms.find(item=>item.id===pendingTask.roomId),task=room?.assignments.find(item=>item.id===pendingTask.taskId);if(active.role!=='student'||!room?.members.some(member=>member.id===active.id)){toast('Tài khoản này không còn thuộc lớp được giao bài.');return}if(!task)return;const submission={studentId:active.id,studentName:active.name,code:$('editor').value,submittedAt:new Date().toISOString(),feedback:''};const index=task.submissions.findIndex(item=>item.studentId===active.id);if(index<0)task.submissions.push(submission);else task.submissions[index]=submission;saveClasses(rooms);toast('Đã nộp bài gắn với tài khoản học sinh.');}
+  function submissionCard(room,task,submission){return `<article class="class-submission-v3"><div><b>${safe(submission.studentName)} · ${safe(task.title)}</b><small>${safe(room.name)} · ${new Date(submission.submittedAt).toLocaleString('vi-VN')}</small></div><pre>${safe(submission.code)}</pre><p>Phản hồi: ${safe(submission.feedback||'Chưa có')}</p><button class="ghost" data-feedback="${safe(submission.studentId)}" data-class="${safe(room.id)}" data-task="${safe(task.id)}">Gửi nhận xét</button></article>`}
+  function giveFeedback(roomId,taskId,studentId){const rooms=classes(),room=rooms.find(item=>item.id===roomId),task=room?.assignments.find(item=>item.id===taskId),submission=task?.submissions.find(item=>item.studentId===studentId);if(!submission)return;const feedback=prompt(`Nhận xét cho ${submission.studentName}`,submission.feedback||'');if(feedback===null)return;submission.feedback=feedback;saveClasses(rooms);renderClassroom()}
+  function installIdeGuide(){const section=document.createElement('section');section.className='ide-guide-v3 panel';section.innerHTML=`<div><span class="eyebrow">BẮT ĐẦU TỪ ĐÂY</span><h2>Viết dòng code đầu tiên</h2><p>Chọn ngôn ngữ, thử một mẫu rồi bấm <b>Chạy mã</b>. Bạn có thể sửa bất kỳ dòng nào.</p></div><div class="ide-steps-v3"><span><b>01</b> Chọn ngôn ngữ</span><span><b>02</b> Sửa code</span><span><b>03</b> Xem kết quả</span></div><div class="ide-starters-v3"><button data-starter="hello">Chào thế giới</button><button data-starter="logic">Thử điều kiện</button><span id="ide-hint-v3">Ví dụ phù hợp với ngôn ngữ đang chọn.</span></div>`;document.querySelector('#page-ide .ide').before(section);const nl=String.fromCharCode(10),templates={hello:{vi:'in("Xin chào, thế giới!")',py:'print("Hello, world!")',js:['const ten = "bạn";','console.log("Xin chào,", ten);'].join(nl),html:['<h1>Xin chào!</h1>','<p>Sửa dòng này để làm quen.</p>'].join(nl)},logic:{vi:['diem = 8','nếu diem >= 5:','    in("Bạn đã đạt!")','ngược_lại:','    in("Thử lại nhé")'].join(nl),py:['score = 8','if score >= 5:','    print("Bạn đã đạt!")','else:','    print("Thử lại nhé")'].join(nl),js:['const diem = 8;','if (diem >= 5) {','  console.log("Bạn đã đạt!");','} else {','  console.log("Thử lại nhé");','}'].join(nl),html:['<article>','  <h1>Điều kiện</h1>','  <p>Hãy thử sửa nội dung này.</p>','</article>'].join(nl)}};section.querySelectorAll('[data-starter]').forEach(button=>button.onclick=()=>{const lang=$('lang').value;$('editor').value=templates[button.dataset.starter][lang]||templates.hello.py;$('editor').dispatchEvent(new Event('input',{bubbles:true}));$('editor').focus();$('output').textContent=lang==='html'?'Bấm Chạy mã để xem trang trong khung xem trước.':'Bấm Chạy mã để xem kết quả. Bạn có thể sửa từng dòng.'});const hint=()=>{$('ide-hint-v3').textContent=({vi:'Python tiếng Việt · Các từ khóa trong mẫu dùng tiếng Việt.',py:'Python chuẩn · Cú pháp Python quen thuộc.',js:'JavaScript · Chạy cục bộ trong Worker.',html:'HTML · Xem trước trong khung an toàn.'})[$('lang').value]||'Ví dụ phù hợp với ngôn ngữ đang chọn.'};$('lang').addEventListener('change',hint);hint()}
+  const style=document.createElement('style');style.textContent=`
+    html,body,button,input,textarea,select{font-family:"Be Vietnam Pro","Noto Sans","Segoe UI",Tahoma,Arial,sans-serif!important;font-kerning:normal;-webkit-font-smoothing:antialiased}#page-home h1,#page-home h2{line-height:1.22;letter-spacing:-.025em}.ide-guide-v3{display:grid;grid-template-columns:1fr auto;gap:12px 20px;margin-bottom:12px;padding:17px!important}.ide-guide-v3 h2{margin:4px 0;font-size:1.05rem}.ide-guide-v3 p{margin:0;color:var(--muted);font-size:.78rem;line-height:1.65}.ide-steps-v3{display:flex;align-items:center;gap:13px;color:var(--muted);font-size:.68rem}.ide-steps-v3 b{display:inline-grid;place-items:center;width:21px;height:21px;margin-right:4px;border-radius:50%;background:var(--soft);color:var(--green)}.ide-starters-v3{grid-column:1/-1;display:flex;align-items:center;gap:8px;flex-wrap:wrap}.ide-starters-v3 button{padding:7px 10px;border:1px solid var(--line);border-radius:4px;background:var(--card);color:var(--ink);cursor:pointer}.ide-starters-v3 span{margin-left:auto;color:var(--muted);font-size:.7rem}.account-manager-v3{margin-bottom:14px;padding:20px!important}.account-manager-v3 h2{margin:5px 0 12px;font-size:1.2rem}.account-summary-v3{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.account-summary-v3>div{display:grid;gap:4px}.account-summary-v3 small{color:var(--muted);font-size:.75rem}.account-avatar-v3{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--soft);color:var(--green);font-weight:800}.local-tag-v3{margin-left:auto;color:var(--muted);font-size:.62rem;letter-spacing:.08em}.account-actions-v3{display:flex;gap:8px;margin:13px 0}.account-fields-v3{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.account-fields-v3 label,.auth-fields-v3 label,.class-form-v3 label{display:grid;gap:5px;color:var(--muted);font-size:.76rem}.account-fields-v3 input,.auth-fields-v3 input,.auth-fields-v3 select,.class-form-v3 input,.class-form-v3 textarea{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:5px;background:var(--card);color:var(--ink);font:inherit}.auth-note-v3{color:var(--muted);font-size:.72rem;line-height:1.65}.auth-close{display:flex;justify-content:end}.auth-close button{border:0;border-radius:4px;background:var(--soft);font-size:1.2rem}#account-dialog-v3{width:min(460px,calc(100vw - 24px));max-height:90vh;overflow:auto;border:1px solid var(--line);border-radius:9px;background:var(--card);color:var(--ink);padding:23px;box-shadow:0 25px 80px #13201740}#account-dialog-v3::backdrop{background:#13201788;backdrop-filter:blur(3px)}.auth-tabs-v3{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin:15px 0;padding:4px;border-radius:5px;background:var(--soft)}.auth-tabs-v3 button{padding:8px;border:0;border-radius:4px;background:transparent;color:var(--muted);font-size:.75rem;cursor:pointer}.auth-tabs-v3 button.active{background:var(--card);color:var(--green);font-weight:750}.auth-fields-v3{display:grid;gap:10px}.auth-fields-v3 [hidden],#auth-logout-v3[hidden]{display:none!important}#auth-error-v3{min-height:18px;margin:0;color:#a54739;font-size:.74rem}.auth-toggle-v3{justify-self:start;border:0;background:none;color:var(--green);font-size:.72rem;cursor:pointer}.auth-logout-v3{margin-top:10px;border:0;background:none;color:#a54739;font-size:.75rem;cursor:pointer}.class-columns-v3{display:grid;grid-template-columns:.85fr 1.15fr;gap:12px}.class-columns-v3 h2,.class-submissions-v3 h2{margin:6px 0 14px;font-size:1.1rem}.class-form-v3{display:grid;gap:10px}.class-card-v3,.class-task-card-v3,.class-submission-v3{margin-top:9px;padding:13px;border:1px solid var(--line);border-radius:6px;background:var(--card)}.class-card-top-v3{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.class-card-top-v3>div{display:grid;gap:5px}.class-card-top-v3 small,.class-card-v3 small,.class-task-card-v3 small,.class-submission-v3 small{display:block;margin-top:5px;color:var(--muted);font-size:.72rem}.class-card-top-v3 code{padding:5px 8px;border-radius:4px;background:var(--soft);color:var(--green);font: .8rem ui-monospace,monospace;letter-spacing:.08em}.class-meta-v3,.class-members-v3,.class-task-line-v3{margin:9px 0;color:var(--muted);font-size:.74rem}.class-actions-v3{display:flex;gap:8px;flex-wrap:wrap}.assignment-create-v3{margin-top:9px;padding-top:8px;border-top:1px solid var(--line);font-size:.76rem}.assignment-create-v3 summary{color:var(--green);cursor:pointer}.assignment-create-v3 .class-form-v3{padding-top:10px}.class-submissions-v3{margin-top:12px}.class-submission-v3 pre{max-height:180px;overflow:auto;padding:10px;border-radius:4px;background:var(--soft);white-space:pre-wrap;font:.72rem/1.6 ui-monospace,monospace}.class-task-card-v3 p{color:var(--muted);font-size:.8rem;line-height:1.65}.task-status-v3{font-size:.72rem;color:var(--green)}.teacher-feedback-v3{padding:8px;background:var(--soft);color:var(--green)!important}.class-gate-v3{padding:26px!important}.class-gate-v3 p{color:var(--muted);line-height:1.7;font-size:.8rem}.my-classes-v3{margin-top:18px}.my-classes-v3 h3{font-size:.88rem}.ide-guide-v3,.ide-steps-v3,.ide-starters-v3{min-width:0}.sample{filter:drop-shadow(0 18px 25px #16221916)}.sample header,.sample pre,.sample footer{transition-duration:.28s}.sample header{box-shadow:0 12px 20px #0002}.sample pre{backface-visibility:hidden}.sample footer{box-shadow:0 -10px 18px #0002}
+    @media(max-width:850px){.class-columns-v3{grid-template-columns:1fr}.ide-guide-v3{grid-template-columns:1fr}.ide-steps-v3{flex-wrap:wrap}.ide-starters-v3{grid-column:auto}}
+    @media(max-width:520px){.account-fields-v3{grid-template-columns:1fr}.local-tag-v3{display:none}.ide-steps-v3{display:grid;grid-template-columns:1fr 1fr;gap:7px}.ide-starters-v3 span{width:100%;margin:2px 0}.class-card-top-v3{flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){.sample header,.sample pre,.sample footer{transition:none!important;transform:none!important}.sample{filter:none!important}}
+  `;document.head.append(style);
+  installProfileManager();installIdeGuide();updateAccountUI();
+  $('account-form-v3').addEventListener('submit',submitAuth);dlg.querySelectorAll('[data-auth-v3]').forEach(button=>button.addEventListener('click',()=>setMode(button.dataset.authV3)));$('auth-toggle-v3').onclick=()=>{const visible=$('auth-pass-v3').type==='password';$('auth-pass-v3').type=visible?'text':'password';$('auth-confirm-v3').type=visible?'text':'password';$('auth-toggle-v3').textContent=visible?'Ẩn mật khẩu':'Hiện mật khẩu'};$('auth-logout-v3').onclick=()=>{setActive(null);dlg.close();toast('Đã đăng xuất.')};
+  document.querySelector('#side [data-go="classroom"]')?.addEventListener('click',()=>setTimeout(renderClassroom,0));document.querySelector('#side [data-go="profile"]')?.addEventListener('click',()=>setTimeout(renderProfileManager,0));document.querySelectorAll('[data-role]').forEach(button=>button.onclick=()=>{if(active&&button.dataset.role!==active.role){toast('Vai trò của tài khoản đã tạo không thể đổi.');return}document.querySelectorAll('[data-role]').forEach(item=>item.classList.toggle('active',item===button));renderClassroom()});window.addEventListener('storage',event=>{if(event.key==='mc3_session'){active=accounts().find(item=>item.id===read('mc3_session',null))||null;restore(active);updateAccountUI();refreshCurrent()}});window.addEventListener('pagehide',snapshot);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')snapshot()});setInterval(()=>{if(document.visibilityState==='visible')snapshot()},5000);if(active)restore(active);renderClassroom();
+})();
+</script></body></html>
+
+
+
+
